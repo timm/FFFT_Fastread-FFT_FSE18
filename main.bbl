@@ -1,0 +1,546 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{00}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{}, \showDOI{}, and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showDOI}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showDOI #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showDOI      \undefined \def \showDOI       #1{#1}\fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[\protect\citeauthoryear{Agrawal, Fu, and Menzies}{Agrawal
+  et~al\mbox{.}}{2018a}]%
+        {AGRAWAL2018}
+\bibfield{author}{\bibinfo{person}{A. Agrawal}, \bibinfo{person}{W. Fu}, {and}
+  \bibinfo{person}{T. Menzies}.} \bibinfo{year}{2018}\natexlab{a}.
+\newblock \showarticletitle{What is wrong with topic modeling? And how to fix
+  it using search-based software engineering}.
+\newblock \bibinfo{journal}{{\em IST\/}} (\bibinfo{year}{2018}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Agrawal and Menzies}{Agrawal and
+  Menzies}{2018}]%
+        {agrawal17better}
+\bibfield{author}{\bibinfo{person}{A. Agrawal} {and} \bibinfo{person}{T.
+  Menzies}.} \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{``Better Data'' is Better than ``Better Data
+  Miners'' (Benefits of Tuning {SMOTE} for Defect Prediction)}.
+\newblock \bibinfo{journal}{{\em ICSE\/}} (\bibinfo{year}{2018}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Agrawal, Tu, and Menzies}{Agrawal
+  et~al\mbox{.}}{2018b}]%
+        {agrawal18_fft}
+\bibfield{author}{\bibinfo{person}{A. Agrawal}, \bibinfo{person}{H. Tu}, {and}
+  \bibinfo{person}{T. Menzies}.} \bibinfo{year}{2018}\natexlab{b}.
+\newblock \showarticletitle{Can You Explain That, Better? Comprehensible Text
+  Analytics for {SE} Applications}.
+\newblock  (\bibinfo{year}{2018}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Arcuri and Briand}{Arcuri and Briand}{2011}]%
+        {arcuri2011practical}
+\bibfield{author}{\bibinfo{person}{A. Arcuri} {and} \bibinfo{person}{L.
+  Briand}.} \bibinfo{year}{2011}\natexlab{}.
+\newblock \showarticletitle{A practical guide for using statistical tests to
+  assess randomized algorithms in software engineering}. In
+  \bibinfo{booktitle}{{\em 33rd ICSE}}. IEEE.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Bergstra, Bardenet, Bengio, and
+  K{\'e}gl}{Bergstra et~al\mbox{.}}{2011}]%
+        {bergstra11TPE}
+\bibfield{author}{\bibinfo{person}{J. Bergstra}, \bibinfo{person}{R. Bardenet},
+  \bibinfo{person}{Y. Bengio}, {and} \bibinfo{person}{B. K{\'e}gl}.}
+  \bibinfo{year}{2011}\natexlab{}.
+\newblock \showarticletitle{Algorithms for Hyper-parameter Optimization}. In
+  \bibinfo{booktitle}{{\em 24th International Conference on NIPS}}. 9.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Bergstra and Bengio}{Bergstra and
+  Bengio}{2012}]%
+        {Bergstra:2012}
+\bibfield{author}{\bibinfo{person}{J. Bergstra} {and} \bibinfo{person}{Y.
+  Bengio}.} \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{Random Search for Hyper-parameter Optimization}.
+\newblock \bibinfo{journal}{{\em J. Mach. Learn. Res.\/}} \bibinfo{volume}{13},
+  \bibinfo{number}{1} (\bibinfo{date}{Feb.} \bibinfo{year}{2012}),
+  \bibinfo{pages}{281--305}.
+\newblock
+\showISSN{1532-4435}
+
+
+\bibitem[\protect\citeauthoryear{Calero and Piattini}{Calero and
+  Piattini}{2015}]%
+        {calero15_green}
+\bibfield{author}{\bibinfo{person}{C. Calero} {and} \bibinfo{person}{M.
+  Piattini}.} \bibinfo{year}{2015}\natexlab{}.
+\newblock \bibinfo{booktitle}{{\em Green in Software Engineering}}.
+\newblock \bibinfo{publisher}{Springer Publishing Company, Incorporated}.
+\newblock
+\showISBNx{3319085808, 9783319085807}
+
+
+\bibitem[\protect\citeauthoryear{Chen, Fu, Krishna, and Menzies}{Chen
+  et~al\mbox{.}}{2018}]%
+        {di18_fft}
+\bibfield{author}{\bibinfo{person}{D. Chen}, \bibinfo{person}{W. Fu},
+  \bibinfo{person}{R. Krishna}, {and} \bibinfo{person}{T. Menzies}.}
+  \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Applications of Psychological Science for
+  Actionable Analytics}.
+\newblock \bibinfo{journal}{{\em CoRR\/}}  \bibinfo{volume}{abs/1803.05067}
+  (\bibinfo{year}{2018}).
+\newblock
+\showeprint[arxiv]{1803.05067}
+
+
+\bibitem[\protect\citeauthoryear{Chen and Menzies}{Chen and Menzies}{2018}]%
+        {chen2017riot}
+\bibfield{author}{\bibinfo{person}{Jianfeng Chen} {and} \bibinfo{person}{Tim
+  Menzies}.} \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{RIOT: a Novel Stochastic Method for Rapidly
+  Configuring Cloud-Based Workflows}. In \bibinfo{booktitle}{{\em IEEE Cloud
+  2018}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Corazza, Di~Martino, Ferrucci, Gravino, and
+  Sarro}{Corazza et~al\mbox{.}}{2010}]%
+        {corazza10ee}
+\bibfield{author}{\bibinfo{person}{A. Corazza}, \bibinfo{person}{S.
+  Di~Martino}, \bibinfo{person}{F. Ferrucci}, \bibinfo{person}{C. Gravino},
+  {and} \bibinfo{person}{F. Sarro}.} \bibinfo{year}{2010}\natexlab{}.
+\newblock \showarticletitle{How Effective is Tabu Search to Configure Support
+  Vector Regression for Effort Estimation?}. In \bibinfo{booktitle}{{\em 6th
+  PROMISE}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Elish and Elish}{Elish and Elish}{2008}]%
+        {elish08defect}
+\bibfield{author}{\bibinfo{person}{K.~O. Elish} {and} \bibinfo{person}{M.~O.
+  Elish}.} \bibinfo{year}{2008}\natexlab{}.
+\newblock \showarticletitle{Predicting Defect-prone Software Modules Using
+  Support Vector Machines}.
+\newblock \bibinfo{journal}{{\em J. Syst. Softw.\/}} \bibinfo{volume}{81},
+  \bibinfo{number}{5} (\bibinfo{date}{May} \bibinfo{year}{2008}),
+  \bibinfo{pages}{649--660}.
+\newblock
+\showISSN{0164-1212}
+\showDOI{%
+\url{https://doi.org/10.1016/j.jss.2007.07.040}}
+
+
+\bibitem[\protect\citeauthoryear{Feurer, Klein, Eggensperger, Springenberg,
+  Blum, and Hutter}{Feurer et~al\mbox{.}}{2015}]%
+        {feurer15autosk}
+\bibfield{author}{\bibinfo{person}{M. Feurer}, \bibinfo{person}{A. Klein},
+  \bibinfo{person}{K. Eggensperger}, \bibinfo{person}{J. Springenberg},
+  \bibinfo{person}{M. Blum}, {and} \bibinfo{person}{F. Hutter}.}
+  \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Efficient and Robust Automated Machine Learning}.
+\newblock In \bibinfo{booktitle}{{\em NIPS 28}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Fu and Menzies}{Fu and Menzies}{2017}]%
+        {Fu17easy}
+\bibfield{author}{\bibinfo{person}{W. Fu} {and} \bibinfo{person}{T. Menzies}.}
+  \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Easy over Hard: {A} Case Study on Deep Learning}.
+\newblock \bibinfo{journal}{{\em CoRR\/}} (\bibinfo{year}{2017}).
+\newblock
+\showeprint[arxiv]{1703.00133}
+\showURL{%
+\url{http://arxiv.org/abs/1703.00133}}
+
+
+\bibitem[\protect\citeauthoryear{Fu, Menzies, Chen, and Agrawal}{Fu
+  et~al\mbox{.}}{2018}]%
+        {fu18_fft}
+\bibfield{author}{\bibinfo{person}{W. Fu}, \bibinfo{person}{T. Menzies},
+  \bibinfo{person}{D. Chen}, {and} \bibinfo{person}{A. Agrawal}.}
+  \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Building Better Quality Predictors Using
+  "{\(\epsilon\)}-Dominance"}.
+\newblock \bibinfo{journal}{{\em CoRR\/}}  \bibinfo{volume}{abs/1803.04608}
+  (\bibinfo{year}{2018}).
+\newblock
+\showeprint[arxiv]{1803.04608}
+
+
+\bibitem[\protect\citeauthoryear{Fu, Menzies, and Shen}{Fu
+  et~al\mbox{.}}{2016}]%
+        {Fu2016TuningFS}
+\bibfield{author}{\bibinfo{person}{W. Fu}, \bibinfo{person}{T. Menzies}, {and}
+  \bibinfo{person}{X. Shen}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Tuning for software analytics: Is it really
+  necessary?}
+\newblock \bibinfo{journal}{{\em IST\/}}  \bibinfo{volume}{76}
+  (\bibinfo{year}{2016}), \bibinfo{pages}{135--146}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Fu, Nair, and Menzies}{Fu
+  et~al\mbox{.}}{2016}]%
+        {Fu16Grid}
+\bibfield{author}{\bibinfo{person}{W. Fu}, \bibinfo{person}{V. Nair}, {and}
+  \bibinfo{person}{T. Menzies}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Why is Differential Evolution Better than Grid
+  Search for Tuning Defect Predictors?}
+\newblock \bibinfo{journal}{{\em CoRR\/}}  \bibinfo{volume}{abs/1609.02613}
+  (\bibinfo{year}{2016}).
+\newblock
+\showeprint[arxiv]{1609.02613}
+
+
+\bibitem[\protect\citeauthoryear{Ghotra, McIntosh, and Hassan}{Ghotra
+  et~al\mbox{.}}{}]%
+        {ghotra15}
+\bibfield{author}{\bibinfo{person}{B. Ghotra}, \bibinfo{person}{S. McIntosh},
+  {and} \bibinfo{person}{A.~E. Hassan}.}
+\newblock \showarticletitle{Revisiting the Impact of Classification Techniques
+  on the Performance of Defect Prediction Models}. In \bibinfo{booktitle}{{\em
+  2015 IEEE/ACM 37th IEEE ICSE}}.
+\newblock
+\showISSN{0270-5257}
+\showDOI{%
+\url{https://doi.org/10.1109/ICSE.2015.91}}
+
+
+\bibitem[\protect\citeauthoryear{Hutter, Hoos, and Leyton-Brown}{Hutter
+  et~al\mbox{.}}{2011}]%
+        {hutter11smac}
+\bibfield{author}{\bibinfo{person}{F. Hutter}, \bibinfo{person}{H.~H. Hoos},
+  {and} \bibinfo{person}{K. Leyton-Brown}.} \bibinfo{year}{2011}\natexlab{}.
+\newblock \showarticletitle{Sequential Model-based Optimization for General
+  Algorithm Configuration}. In \bibinfo{booktitle}{{\em 5th LION}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Jia, Cohen, Harman, and Petke}{Jia
+  et~al\mbox{.}}{2015}]%
+        {jia15combinatorial}
+\bibfield{author}{\bibinfo{person}{Y. Jia}, \bibinfo{person}{M.~B. Cohen},
+  \bibinfo{person}{M. Harman}, {and} \bibinfo{person}{J. Petke}.}
+  \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Learning Combinatorial Interaction Test Generation
+  Strategies Using Hyperheuristic Search}. In \bibinfo{booktitle}{{\em ICSE}}.
+\newblock
+\showISBNx{978-1-4799-1934-5}
+
+
+\bibitem[\protect\citeauthoryear{Kamei, Shihab, Adams, Hassan, Mockus, Sinha,
+  and Ubayashi}{Kamei et~al\mbox{.}}{2013}]%
+        {kamei13_assurance}
+\bibfield{author}{\bibinfo{person}{Y. Kamei}, \bibinfo{person}{E. Shihab},
+  \bibinfo{person}{B. Adams}, \bibinfo{person}{A.~E. Hassan},
+  \bibinfo{person}{A. Mockus}, \bibinfo{person}{A. Sinha}, {and}
+  \bibinfo{person}{N. Ubayashi}.} \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{A large-scale empirical study of just-in-time
+  quality assurance}.
+\newblock \bibinfo{journal}{{\em IEEE TSE\/}} (\bibinfo{date}{June}
+  \bibinfo{year}{2013}).
+\newblock
+\showISSN{0098-5589}
+\showDOI{%
+\url{https://doi.org/10.1109/TSE.2012.70}}
+
+
+\bibitem[\protect\citeauthoryear{Krishna and Menzies}{Krishna and
+  Menzies}{2017}]%
+        {krishna17_bell}
+\bibfield{author}{\bibinfo{person}{R. Krishna} {and} \bibinfo{person}{T.
+  Menzies}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Simpler Transfer Learning (Using "Bellwethers")}.
+\newblock \bibinfo{journal}{{\em CoRR\/}}  \bibinfo{volume}{abs/1703.06218}
+  (\bibinfo{year}{2017}).
+\newblock
+\showeprint[arxiv]{1703.06218}
+
+
+\bibitem[\protect\citeauthoryear{Krishna, Menzies, and Fu}{Krishna
+  et~al\mbox{.}}{}]%
+        {krishna16bellwether}
+\bibfield{author}{\bibinfo{person}{R. Krishna}, \bibinfo{person}{T. Menzies},
+  {and} \bibinfo{person}{W. Fu}.}
+\newblock \showarticletitle{Too Much Automation? The Bellwether Effect and Its
+  Implications for Transfer Learning}. In \bibinfo{booktitle}{{\em IEEE/ACM
+  ICSE}} {\em (\bibinfo{series}{ASE 2016})}.
+\newblock
+\showISBNx{978-1-4503-3845-5}
+\showDOI{%
+\url{https://doi.org/10.1145/2970276.2970339}}
+
+
+\bibitem[\protect\citeauthoryear{Lessmann, Baesens, Mues, and Pietsch}{Lessmann
+  et~al\mbox{.}}{2008}]%
+        {lessmann08benchmarking}
+\bibfield{author}{\bibinfo{person}{S. Lessmann}, \bibinfo{person}{B. Baesens},
+  \bibinfo{person}{C. Mues}, {and} \bibinfo{person}{S. Pietsch}.}
+  \bibinfo{year}{2008}\natexlab{}.
+\newblock \showarticletitle{Benchmarking Classification Models for Software
+  Defect Prediction: A Proposed Framework and Novel Findings}.
+\newblock \bibinfo{journal}{{\em IEEE TSE\/}} (\bibinfo{year}{2008}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Lewis, Lin, Sadowski, Zhu, Ou, and
+  Whitehead~Jr.}{Lewis et~al\mbox{.}}{2013}]%
+        {lewis13_bug}
+\bibfield{author}{\bibinfo{person}{C. Lewis}, \bibinfo{person}{Z. Lin},
+  \bibinfo{person}{C. Sadowski}, \bibinfo{person}{X. Zhu}, \bibinfo{person}{R.
+  Ou}, {and} \bibinfo{person}{E.~J. Whitehead~Jr.}}
+  \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{Does Bug Prediction Support Human Developers?
+  Findings from a Google Case Study}. In \bibinfo{booktitle}{{\em Proceedings
+  of the 2013 ICSE}}. \bibinfo{pages}{372--381}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Lowry, Boyd, and Kulkami}{Lowry
+  et~al\mbox{.}}{1998}]%
+        {lowry98}
+\bibfield{author}{\bibinfo{person}{M. Lowry}, \bibinfo{person}{M. Boyd}, {and}
+  \bibinfo{person}{D. Kulkami}.} \bibinfo{year}{1998}\natexlab{}.
+\newblock \showarticletitle{Towards a theory for integration of mathematical
+  verification and empirical testing}. In \bibinfo{booktitle}{{\em 13th IEEE
+  ASE}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Menzies, Greenwald, and Frank}{Menzies
+  et~al\mbox{.}}{2007}]%
+        {menzies07defect}
+\bibfield{author}{\bibinfo{person}{T. Menzies}, \bibinfo{person}{J. Greenwald},
+  {and} \bibinfo{person}{A. Frank}.} \bibinfo{year}{2007}\natexlab{}.
+\newblock \showarticletitle{Data Mining Static Code Attributes to Learn Defect
+  Predictors}.
+\newblock \bibinfo{journal}{{\em IEEE TSE\/}} (\bibinfo{date}{Jan}
+  \bibinfo{year}{2007}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Menzies, Raffo, Setamanit, Hu, and
+  Tootoonian}{Menzies et~al\mbox{.}}{2002}]%
+        {menzies02_truism}
+\bibfield{author}{\bibinfo{person}{T. Menzies}, \bibinfo{person}{D. Raffo},
+  \bibinfo{person}{S. Setamanit}, \bibinfo{person}{Y. Hu}, {and}
+  \bibinfo{person}{S. Tootoonian}.} \bibinfo{year}{2002}\natexlab{}.
+\newblock \showarticletitle{Model-Based Tests of Truisms}. In
+  \bibinfo{booktitle}{{\em 17th IEEE International Conference on ASE}} {\em
+  (\bibinfo{series}{ASE '02})}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Minku and Yao}{Minku and Yao}{2013}]%
+        {minky13ensemble}
+\bibfield{author}{\bibinfo{person}{L. Minku} {and} \bibinfo{person}{X. Yao}.}
+  \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{An Analysis of Multi-objective Evolutionary
+  Algorithms for Training Ensemble Models Based on Different Performance
+  Measures in Software Effort Estimation}. In \bibinfo{booktitle}{{\em
+  Proceedings of the 9th PROMISE}}.
+\newblock
+\showISBNx{978-1-4503-2016-0}
+
+
+\bibitem[\protect\citeauthoryear{Mittas and Angelis}{Mittas and
+  Angelis}{2013}]%
+        {mittas2013ranking}
+\bibfield{author}{\bibinfo{person}{N. Mittas} {and} \bibinfo{person}{L.
+  Angelis}.} \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{Ranking and clustering software cost estimation
+  models through a multiple comparisons algorithm}.
+\newblock \bibinfo{journal}{{\em IEEE TSE\/}} (\bibinfo{year}{2013}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Monden, Hayashi, Shinoda, Shirai, Yoshida,
+  Barker, and Matsumoto}{Monden et~al\mbox{.}}{2013}]%
+        {monden13_assessing}
+\bibfield{author}{\bibinfo{person}{A. Monden}, \bibinfo{person}{T. Hayashi},
+  \bibinfo{person}{S. Shinoda}, \bibinfo{person}{K. Shirai},
+  \bibinfo{person}{J. Yoshida}, \bibinfo{person}{M. Barker}, {and}
+  \bibinfo{person}{K. Matsumoto}.} \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{Assessing the Cost Effectiveness of Fault
+  Prediction in Acceptance Testing}.
+\newblock \bibinfo{journal}{{\em IEEE TSE\/}} \bibinfo{volume}{39},
+  \bibinfo{number}{10} (\bibinfo{date}{Oct} \bibinfo{year}{2013}),
+  \bibinfo{pages}{1345--1357}.
+\newblock
+\showISSN{0098-5589}
+\showDOI{%
+\url{https://doi.org/10.1109/TSE.2013.21}}
+
+
+\bibitem[\protect\citeauthoryear{Moser, Pedrycz, and Succi}{Moser
+  et~al\mbox{.}}{}]%
+        {moser08defect}
+\bibfield{author}{\bibinfo{person}{R. Moser}, \bibinfo{person}{W. Pedrycz},
+  {and} \bibinfo{person}{G. Succi}.}
+\newblock \showarticletitle{A Comparative Analysis of the Efficiency of Change
+  Metrics and Static Code Attributes for Defect Prediction}. In
+  \bibinfo{booktitle}{{\em 2008 ICSE}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Nagappan and Ball}{Nagappan and Ball}{2005}]%
+        {nagappan05}
+\bibfield{author}{\bibinfo{person}{N. Nagappan} {and} \bibinfo{person}{T.
+  Ball}.} \bibinfo{year}{2005}\natexlab{}.
+\newblock \showarticletitle{Static Analysis Tools As Early Indicators of
+  Pre-release Defect Density}. In \bibinfo{booktitle}{{\em Proceedings of the
+  27th ICSE}} {\em (\bibinfo{series}{ICSE '05})}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Nam and Kim}{Nam and Kim}{2015}]%
+        {nam15hetero}
+\bibfield{author}{\bibinfo{person}{J. Nam} {and} \bibinfo{person}{S. Kim}.}
+  \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Heterogeneous Defect Prediction}. In
+  \bibinfo{booktitle}{{\em 10th FSE}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Pedregosa and Varoquaux}{Pedregosa and
+  Varoquaux}{2011}]%
+        {scikit-learn}
+\bibfield{author}{\bibinfo{person}{F. Pedregosa} {and} \bibinfo{person}{G.
+  Varoquaux}.} \bibinfo{year}{2011}\natexlab{}.
+\newblock \showarticletitle{Scikit-learn: Machine Learning in {P}ython}.
+\newblock \bibinfo{journal}{{\em Journal of Machine Learning Research\/}}
+  \bibinfo{volume}{12} (\bibinfo{year}{2011}), \bibinfo{pages}{2825--2830}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Phillips, Neth, Woike, and
+  Gaissmaier}{Phillips et~al\mbox{.}}{2017}]%
+        {phillips17_fft}
+\bibfield{author}{\bibinfo{person}{N.~D. Phillips}, \bibinfo{person}{H. Neth},
+  \bibinfo{person}{J.~K. Woike}, {and} \bibinfo{person}{W. Gaissmaier}.}
+  \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{FFTrees: A toolbox to create, visualize, and
+  evaluate fast-and-frugal decision trees}.
+\newblock \bibinfo{journal}{{\em Judgment and Decision Making\/}}
+  (\bibinfo{year}{2017}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Sayyad, Menzies, and Ammar}{Sayyad
+  et~al\mbox{.}}{2013}]%
+        {sayyad13sbse}
+\bibfield{author}{\bibinfo{person}{A.~S. Sayyad}, \bibinfo{person}{T. Menzies},
+  {and} \bibinfo{person}{H. Ammar}.} \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{On the Value of User Preferences in Search-based
+  Software Engineering: A Case Study in Software Product Lines}. In
+  \bibinfo{booktitle}{{\em 35th ICSE}}.
+\newblock
+\showISBNx{978-1-4673-3076-3}
+
+
+\bibitem[\protect\citeauthoryear{Snoek, Larochelle, and Adams}{Snoek
+  et~al\mbox{.}}{2012}]%
+        {snoek12gp}
+\bibfield{author}{\bibinfo{person}{J. Snoek}, \bibinfo{person}{H. Larochelle},
+  {and} \bibinfo{person}{R. Adams}.} \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{Practical Bayesian Optimization of Machine Learning
+  Algorithms}. In \bibinfo{booktitle}{{\em NIPS - Volume 2}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Song, Minku, and Yao}{Song
+  et~al\mbox{.}}{2013}]%
+        {song13ee}
+\bibfield{author}{\bibinfo{person}{L. Song}, \bibinfo{person}{L.~L. Minku},
+  {and} \bibinfo{person}{X. Yao}.} \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{The Impact of Parameter Tuning on Software Effort
+  Estimation Using Learning Machines}. In \bibinfo{booktitle}{{\em 9th
+  PROMISE}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Storn and Price}{Storn and Price}{1997}]%
+        {storn1997de}
+\bibfield{author}{\bibinfo{person}{R. Storn} {and} \bibinfo{person}{K. Price}.}
+  \bibinfo{year}{1997}\natexlab{}.
+\newblock \showarticletitle{Differential Evolution; A Simple and Efficient
+  Heuristic for Global Optimization over Continuous Spaces}.
+\newblock \bibinfo{journal}{{\em J. of Global Optimization\/}}
+  (\bibinfo{year}{1997}).
+\newblock
+\showDOI{%
+\url{https://doi.org/10.1023/A:1008202821328}}
+
+
+\bibitem[\protect\citeauthoryear{Tan, Tan, and Dara}{Tan et~al\mbox{.}}{}]%
+        {tan15online}
+\bibfield{author}{\bibinfo{person}{M. Tan}, \bibinfo{person}{L. Tan}, {and}
+  \bibinfo{person}{S. Dara}.}
+\newblock \showarticletitle{Online Defect Prediction for Imbalanced Data}. In
+  \bibinfo{booktitle}{{\em ICSE}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Tantithamthavorn, McIntosh, Hassan, and
+  Matsumoto}{Tantithamthavorn et~al\mbox{.}}{2016}]%
+        {tanti16defect}
+\bibfield{author}{\bibinfo{person}{C. Tantithamthavorn}, \bibinfo{person}{S.
+  McIntosh}, \bibinfo{person}{A.~E. Hassan}, {and} \bibinfo{person}{K.
+  Matsumoto}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Automated Parameter Optimization of Classification
+  Techniques for Defect Prediction Models}. In \bibinfo{booktitle}{{\em 38th
+  ICSE}}.
+\newblock
+\showDOI{%
+\url{https://doi.org/10.1145/2884781.2884857}}
+
+
+\bibitem[\protect\citeauthoryear{Wang, Harman, Jia, and Krinke}{Wang
+  et~al\mbox{.}}{}]%
+        {wang13config}
+\bibfield{author}{\bibinfo{person}{T. Wang}, \bibinfo{person}{M. Harman},
+  \bibinfo{person}{Y. Jia}, {and} \bibinfo{person}{J. Krinke}.}
+\newblock \showarticletitle{Searching for Better Configurations: A Rigorous
+  Approach to Clone Evaluation}. In \bibinfo{booktitle}{{\em 2013 9th Joint
+  Meeting on FSE}}.
+\newblock
+
+
+\end{thebibliography}

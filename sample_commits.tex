@@ -1,0 +1,27 @@
+\begin{table*}[!t]
+\footnotesize
+\begin{center}
+\caption{Samples of commit messages in datasets. Mistakes seen when standard SE methods, Keyword automatically tagged comments on computational science software. FASTREAD method is better at capturing the semantics of these commits.} 
+\vspace{-5pt}
+\begin{tabular}{l|ccc}
+Sample Commit Log & Keyword & FASTREAD & Status of Keyword's Conclusion\\ 
+\hline
+\texttt{fixed: rmsd\_fit\_trj() failed to write a XTC file} & 1 & 1 & Correct \\ 
+\texttt{fixes Issue 143: alignto() now checks that the two selections describe the same atoms} & 1 &	1 & Correct \\ 
+\texttt{Correct bugs due to merge (rhotoxc)}	& 1 &	1 & Correct\\ 
+\texttt{Convert tsmear to tphysel in vtorhotf.F90} &	0 &	0 & Correct\\ 
+\texttt{Universe can load multiple trajectories from positional args} &	0 &	0 & Correct \\ \hline
+\texttt{NetCDFWriter working (closes Issue 109)}	& 0 &	1 & False-Negative\\ 
+\texttt{Correction in magnetization rotation (DFPT+PAW)} &	0 &	1 & False-Negative\\
+\texttt{Add missing module dependency} &	0 &	1 & False-Negative\\ 
+\texttt{Correct dfptnl\_pert.F90 for parallel computations} &	0 &	1 & False-Negative\\ 
+\texttt{Test for issue \#352 now pass} &	0 &	1 & False-Negative\\ \hline
+documentation updates and fixes &	1 &	0 & False-Positive \\ 
+\texttt{Removed unused expected error from Selections} &	1 &	0 & False-Positive \\ 
+\texttt{Test for HOLE changed form error to warning when HOLE binaray is not there} &	1 &	0 & False-Positive \\ 
+\texttt{Added CHANGELOG entry for fix of Issue \#550.} &	1 &	0 & False-Positive \\ 
+\texttt{Make error message clearer in tests for TPR parser} &	1 &	0 & False-Positive \\ \hline
+\end{tabular}
+\label{tbl:sample}
+\end{center} 
+\end{table*}
