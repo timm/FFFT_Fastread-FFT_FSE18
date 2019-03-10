@@ -1,11 +1,12 @@
-\pdfoutput=1
-\documentclass[sigconf,review, anonymous]{acmart}
-\settopmatter{printacmref=false} % Removes citation information below abstract
+  \pdfoutput=1
+\documentclass[10pt,conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+%\settopmatter{printacmref=false} % Removes citation information below abstract
 \renewcommand\footnotetextcopyrightpermission[1]{} % removes footnote with conference information in first column
 \pagestyle{plain} % removes running headers
 %\documentclass[sigconf,screen]{acmart}
-%\acmConference[SWAN 2018]{4th International Workshop on Software Analytics, co-located with the 12th   Meeting of the  ACM SIGSOFT Symposium on the Foundations of Software Engineering}{4--9 November, 2018}{Lake Buena Vista, Florida}
-
+\usepackage{dblfloatfix}
+\usepackage{cite} 
 \usepackage{balance}
 %\setcounter{tocdepth}{3}
 %\usepackage{cite}
@@ -14,7 +15,7 @@
 %\usepackage{arydshln}
 \usepackage{libertine}
 %\usepackage{times}
-%\usepackage[dvipsnames]{xcolor}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{rotating}
 \usepackage{makecell}
 \usepackage{tabularx}
@@ -77,6 +78,8 @@ shadow=false
 \newcommand{\be}{\begin{enumerate}[leftmargin=0.4cm]}
 \newcommand{\ee}{\end{enumerate}}
 \newcommand{\fig}[1]{Figure~\ref{fig:#1}}
+
+\newcommand{\tbl}[1]{Table~\ref{tbl:#1}}
 \newcommand{\eq}[1]{Equation~\ref{eq:#1}}
 \newcommand{\tion}[1]{\S\ref{sect:#1}}
 
@@ -123,20 +126,26 @@ shadow=false
 \end{picture}
 }
 
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily,
+  mathescape
+}
+
 %\acmConference[SWAN'18]{Software Analytics}{Nov 2018}{} 
 %\acmYear{2018}
 %\copyrightyear{2018}
 %\acmPrice{15.00}
 
-\setcopyright{acmcopyright}
-\acmPrice{15.00}
-\acmDOI{10.1145/3278142.3278145}
-\acmYear{2019}
-\copyrightyear{2019}
-\acmISBN{978-1-4503-6056-2/18/11}
-\acmConference[ESEC/FSE 2019]{The 27th ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering}{26--30 August, 2019}{Tallinn, Estonia}
-%\pagestyle{plain}
-%\thispagestyle{empty}
+% \setcopyright{acmcopyright}
+% \acmPrice{15.00}
+% \acmDOI{10.1145/3278142.3278145}
+% \acmYear{2019}
+% \copyrightyear{2019}
+% \acmISBN{978-1-4503-6056-2/18/11}
+% \acmConference[ESEC/FSE 2019]{The 27th ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering}{26--30 August, 2019}{Tallinn, Estonia}
+% %\pagestyle{plain}
+% %\thispagestyle{empty}
 
 
 %\title{While Tuning is Good, No Tuner is Best}
@@ -150,8 +159,22 @@ shadow=false
 % If there are more than two authors, 'et al.' is used.
 %
 
-\title{Better Software Analytics via a Human+AI Partnership}
+
+\begin{document}
+
+
+ \title{ 
+Combining
+Human+Artificial Intelligence for \\
+ Better Software Analytics (using  $F^3T$)}
+ 
+ 
+\author{\IEEEauthorblockN{1\textsuperscript{st} Blinded for review}
+}
+
+
 % \numberofauthors{3}
+
 \author{Anonymous Author}
 %\email{hqtu@ncsu.edu} 
 %\author{Vivek Nair}
@@ -163,30 +186,33 @@ shadow=false
 %       \country{USA}
 %       \postcode{27606}
 % }
+\maketitle
 
-\begin{document}
-
-
- 
 \begin{abstract}
+Standard automatic methods for recognizing
+problematic code can be  improved  via the
+incremental application of
+ human+artificial expertise.
+ In this approach,  call $F^3T$,  AI tools explore  software to find code
+ that they guess is most problematic.  Humans  the apply their expertise to  check that guess
+ (perhaps resulting in the AI
+updating the  support vectors within their SVM learner).
 
-
-In software analytics, issues are typically labelled as ``buggy'' if they
-contain a  set of keywords such as ``bug, fix, wrong, error''.
-We show that much better labels can be learned  an incremental
-AI tool that
-reflects on the SVM built (so far) in order  guess what issue report is most lik. Humans then review that guess, perhaps forcing the SVM
-to update its models. 
-
-In studies with nine open source software projects, we find that
-incremental application of human+artificial  intelligence
-is much faster (5 times)     with manual labeling.
-Also,  it is also highly effective.
+We recommend this human+AI partnership, for several reasons.
+When a new domain is encountered, $F^3T$ can  learn better ways to label which comments
+refer to real problems.
+Further, 
+in studies with 9 open source software projects,
+$F^3T$'s incremental application of human+artificial  intelligence
+is five times   faster than existing methods.
+Lastly,   $F^3T$ is  highly effective.
 Very simple rule learners (with
-access to this labelling model) significantly out-perform
-state-of-the-art data mining methods.  For example, in some data sets,
-our new labelling method was seen to improve 
-G-value and $P_{opt}(20)$ byt 48\% and 26\%, respectively. 
+access to the labels generated via $F^3T$) can significantly out-perform
+state-of-the-art data mining methods. For the data sets explored here, when compared to standard methods, 
+$F^3T$  improved 
+G-values and $P_{opt}(20)$ values by  48\% and 26\%.  
+
+
 
 
 %which is borrowed from systematic literature review
@@ -195,74 +221,355 @@ G-value and $P_{opt}(20)$ byt 48\% and 26\%, respectively.
 
 \end{abstract}
  
-\begin{CCSXML}
-<ccs2012>
-<concept>
-<concept_id>10011007.10011074.10011784</concept_id>
-<concept_desc>Software and its engineering~Search-based software engineering</concept_desc>
-<concept_significance>500</concept_significance>
-</concept>
-</ccs2012>
-\end{CCSXML}
+% \begin{CCSXML}
+% <ccs2012>
+% <concept>
+% <concept_id>10011007.10011074.10011784</concept_id>
+% <concept_desc>Software and its engineering~Search-based software engineering</concept_desc>
+% <concept_significance>500</concept_significance>
+% </concept>
+% </ccs2012>
+% \end{CCSXML}
 
 % \ccsdesc[500]{Software and its engineering~Search-based software engineering}
  
-\keywords{Software Analytics, Human-in-the-loop AI, FFTs, SMOTE, Risky Software Commits, Software Prediction}
+ 
+\begin{IEEEkeywords}
+Software Analytics, Human-in-the-loop AI, FFTs,  Defect prediction
+\end{IEEEkeywords}
+
+ 
 
 \maketitle
 \section{Introduction}
+% One of the dreams of industrial analytics is that
+% new conclusions can be quickly
+% obtained from new data just by throwing 
+% the data at an automatic  data miner. In practice, there are many challenges before that dream can be realized.
+% For example,  engineering judgment must be applied to:
+% \be
+% \item Categorize bug reports as ``buggy'' or not.
+% \item Determine what code changes were implicated
+% in a bug report;
+% \item Describe code as a set of features;
+% \item Cluster data prior to learning;
+% \item Tune algorithms that manage class imbalance;
+% \item Decide which data miners to apply;
+% \item Select the control parameters for the data miners; e.g. how many trees for a random forest;
+% \ee
+% Note that in the above sequence
+% Much recent work has explored the first five
+% items. For example, Ghotra et al.  assessed how well dozens
+% of data miners perform for data mining~\cite{ghotra15}.
+% Applying that engineering judgment can be 
+%  complex and potentially time consuming. Hence,
+%  much recent
+% research has focused on how to automate the above five
+% tasks. Many papers 
 
-It takes at least four steps
-to predict   that code is buggy.
-Firstly,
- the issues  that report software bugs must
- be {\em labelled}.  
-Secondly, metrics  must be collected to summarize
-the code.
-Thirdly, the code changes that preceded that issue report
-must be implicated. Lastly, some classifier
-must learn to differentiate between the implicated and
-non-implicated code (using the summary features). 
-\[
-\left(\begin{array}{c}
-issue\\
-labelling
-\end{array}\right)\rightarrow
-\left(\begin{array}{c}
-issue\\
-labelling
-\end{array}\right)
-\]
-Much recent research has explored
-steps 2,3,4. 
+% Much recemt
+% imbalance tools These engineering decisions it has been shown that use the default tunings can lead to sub-optimal results. 
 
-In this paper, we report ways to significantly
-improve the issue labelling algorithm of step1.
+% the behavior of many data miners is
+% controlled by certain tuning parameters. 
 
 
-The keynote at Foundation of Software Engineering (FSE)'18~\cite{meijer18} offered a vision of ``Software 2.0'' where software is mostly written automatically by AI systems applying formal methods to rigorously defined primitives. For {\em writing} software, this does sound appealing for reducing cost and increasing the quality of released code. However, after the {\em creation} of versions of software comes the {\em maintenance} which requires human participation.  For example, once the software is released and utilized by some people, then the number of resulting issue reports can become very large. Neumann~\cite{neumann13} reports that in one public repository (Github), the number of open issues can be twice the number of closed ones. In such projects, human maintainers are faced with more tasks than they can complete. Hence, their domain knowledge is required when debating which issues to explore and which to ignore.  
+% Using software analytics takes at least four steps
+% to predict   that code is buggy.
+% Firstly,
+%  the issues  that report software bugs must
+%  be {\em labelled}.  
+% Secondly, metrics  must be collected to summarize
+% the code.
+% Thirdly, the code changes that preceded that issue report
+% must be implicated. Lastly, some classifier
+% must learn to differentiate between the implicated and
+% non-implicated code (using the metrics). 
+
+% Much recent research has explored
+% steps 2,3,4~\cite{} but scant attention has been given to initial labelling step. 
+% In this paper, we report ways to significantly
+% improve the issue labelling algorithm of step1. This new method incorporates a novel
+% human-in-the-loop process in whcuh 
+
+% The usual methods 
+% Vasilescu~\cite{Vasilescu18} reports 
+
+
+%A recent keynote at FSE'18~\cite{meijer18} offered a vision of ``Software 2.0'' where software is mostly written automatically by AI systems applying formal methods to rigorously defined primitives. For {\em writing} software, this does sound appealing for reducing cost and increasing the quality of released code. However, after the {\em creation} of versions of software comes the {\em maintenance} which requires human participation.  For example, once the software is released and utilized by some people, then the number of resulting issue reports can become very large.
+Our research goal is the  certification of general software analytics methods that can be used for many future projects.  
+This paper reports that one widely-used method  is {\em not} general.
+Specifically, {\em using  keywords to identify  ``worrying'' issue messages}
+ fails very badly when applied to different kinds of software. 
+ Much better identification can be achieved with    $F^3T$,
+ a novel combination of human+artificial intelligence.  
+ 
+   
+
+  $F^3T$ is useful for SE
+  tasks like software defect prediction that  needs to build some ground truth based on labelled issue commits
+  (such a ground truths are needed to train
+ and test a machine
+learning algorithm). 
+Much recent research~\cite{eirini15promise} builds this ground truth using data from
+Github
+(which is an on-line repository system holding  $10^7$ repositories of software projects and/or code).
+Neumann~\cite{neumann13} reports that in Github,
+the number of open issues can be twice the number of closed ones. In such projects, human maintainers are faced with more tasks than they can complete. Hence, their domain knowledge is required when deciding which issues are truly ``worrying''
+and which can be ignored. 
+
+
+How to capture that domain knowledge, while   ensuring
+the  knowledge is relevant and useful?  This is an important question.
+If the wrong things are labelled ``worrying''  then everything that follows will be a wild goose chase
+for  predictors for things that are not  at all  worrisome.
+
+Standard 
+  practice in software analytics is to
+  label   commit message via their
+  overlap  with a set of ``worrying'' keywords like  Table~\ref{tab:words}.
+  Vasilescu et al. \cite{Vasilescu15github} asserts that this initial labelling of  commits is essential
+  to the success of this process~\cite{commitguru, Kim08changes, catolino17_jitmobile, nayrolles18_clever}.  Vasilescu also warns that these
+  keywords are used in somewhat ad hoc manner where researchers peek at a few results, then tinker a little with the regular expressions that combine these keywords~\cite{Vasilescu18z}. 
+  Consequently,   this keyword approach can lead to poor results.
+ For example:
+ \bi
+ \item Table \ref{tbl:sample} compares   labels assigned
+    via  the keyword method or $F^3T$.
+    The last column of that table shows   results from an expert manual review of 
+    the commit messages. 
+    \item
+   The \textcolor{red}{\bf red} squares of \fig{rq3_1} shows results where those labels are used in a predictor
+    for ``worrying''.
+    \ei
+    Note that, in Table \ref{tbl:sample} and \fig{rq3_1}, labelling
+    via keywords
+    often performs very badly   
+    (and $F^3T$ does much better-- see the \textcolor{ForestGreen}{\bf green} triangles of \fig{rq3_1}). 
+    
+  
+  
+
+   
+
+\begin{table}[!b]
+
+ {\scriptsize 
+ \caption{  Worrying keywords. From~\cite{hindle08_largecommits}}\label{tab:words}
+ \begin{tabular}{l|l}
+\textbf{Category}  & \textbf{Associated Keywords}    \\\hline
+Corrective & \texttt{bug, fix, wrong, error, fail, problem, patch} \\
+Feature Addition & \texttt{new, add, requirement, initial, create} \\
+Merge & \texttt{merge} \\
+Non Functional & \texttt{doc} \\
+Perfective & \texttt{clean, better} \\  
+Preventive & \texttt{test, junit, coverage, asset} 
+\end{tabular}}
+\end{table}
+
+\input{sample_commits.tex}
+\begin{figure*}
+\caption{Using the labels of \tbl{sample},
+learn on version ``i'' (using Random Forests) then  test  on version ``i+1''. Results expresses
+as ``G-value'' (harmonic mean of recall and  1 - false alarm). 
+{\em Higher} G-values
+are {\em better}.  For full details on this experiment, see later in paper.}\label{fig:rq3_1}
+\includegraphics[width=\linewidth]{rq3_1.png}
+\end{figure*}
+
+To be fair to the keyword method tested in \fig{rq3_1}, those words  were selected  using experience from
+ open source Java 
+projects like Apache.
+Yet  the commit
+messages in Table~\ref{tbl:sample} come from
+   the computational science software
+of \tbl{data}.  
+Computational science   explores natural phenomena 
+at both very large scale (e.g. hurricanes) and very small scale
+using (e.g.) micro-level finite elements analysis.
+And just to say the obvious, this kind of software is very different from
+systems like Apache (that 
+ delivers web-scale services to many   clients).
+
+Nevertheless, if a widely used method (use of ``worrying'' keywords'') only works well for certain software domains,
+then it becomes an important research issue to find ways to
+adapt those methods to other domains. 
+Accordingly, this paper introduces and assesses
+$F^3T$
+(short for ``FASTREAD and FAST FRUGAL TREES''),
+a semi-automatic methods for labelling   Github issues and then using them to build predictors for
+worrying software. 
+FAST FRUGRAL TREES are a ensemble-based learner which has recently showed
+much promise for software analytics~\cite{di18_fft}.
+FASTREAD is an incremental 
+{\em active learner} that  implement a human+AI partnership. 
+Our active learners are AI  tools that
+explore a large code base to find commits that seem most likely to be
+worrisome. Then humans apply their subject matter expertise  to review that guess by either
+agreeing or disagreeing that it is worrisome (and, if the latter, then
+the  active
+ learner updates  the support vectors of  a SVM learner).
+The key idea behind active learning is that a machine learning algorithm can train faster (i.e., using less data) if it is allowed to choose the data from which it learns~\cite{settles2012active}\footnote{Technical note: But to avoid over-fitting, the results
+ of that training  process should be tested on data {\em not} seen during  training. See
+ \tion{eval} our description of a test rig that maintains this train/test separation. }.
+  The experience outside of SE is that  active learners can significantly reduce the  effort required to achieve high recall~\cite{Cormack2017Navigating, Cormack2016Engineering, cormack2016scalability, Cormack2015Autonomy, Cormack2014Evaluation, Wallace2010Semi, wallace2010active, wallace2011should, wallace2012class, nguyen2015combining}. 
+
+To assess the value of  $F^3T$,  we built software
+defect predictors by labelling  $36,000$  commits messages from the    computational software
+systems of \tbl{data} using (a)~the standard keyword methods and (b)~active learning with $F^3T$.  To simulate real world constraints, we limit ourselves to what could be achieved with one
+week (40 hours) of work.
+As shown below,   for  our computational  science software,
+predictors generated via $F^3T$ perform far better than those generated using the
+traditional keyword methods. Not only that, but $F^3T$  can speed up
+the human labelling process by a factor of two to seven (median=5). 
+
+
+As to the novel contributions of this paper:
+\bi
+\item This paper is the first to introduce $F^3T$ .
+\item
+To the best of our knowledge,
+ this paper  is the first to use active learners  to label  Github messages.
+ As shown below, this combination of human+artificial intelligence is very useful since it
+ quickly leads to better predictions.
+\item
+Much prior work in software defect prediction has used a small number of open source projects,
+mostly written in JAVA~\cite{Fu2016TuningFS}.
+This paper is the first report of applying a broad range of AI tools (active learners and classifiers)
+to  empirical SE for scientific software. 
+\ei
+% \noindent
+% In summary, the main contributions of this paper are:
+% \bi
+% % \\item 
+% % \item Fastread labeling offer higher quality data for predicting risky software commit than state-of-the-art labeling method, Commit.Guru's automatic keyword labeling.  
+% % \item FFT as a recommended data mining model offer better improvement of performance scores than state-of-the-art methods, Commit.Guru's Logistic Regression. 
+% \item A first novel inter-disciplinary contribution of human+AI partnership and psychological science in software quality assurance. 
+% \item A demonstration of Human+AI partnership for software analytics outperforming approaches that are solely abusing AI. 
+% \item An assessment of active learning for data ingestion quality problem by reproducing prior approach and comparing it with our recommended system.  
+% \item A reproduction package containing all the data and algorithms of this paper, see \url{https://github.com/anonymous-for-review}.
+% \ei
+The rest of this paper is structured as follows. Background work is discussed  in section 2. 3 describes our empirical methodology and experimental design.  This is followed by the details of the experiment results while answers the research questions. Threats are analyzed in 5. future work is provided in 6. All the source code and data used in this paper is available on-line
+at github.com/anonymous-for-review. 
+  
+  Before beginning, we make a comment about the value of Commit.Guru as a research tool. 
+ Apart from the issues with  labelling (documented in this paper), Commit.Guru supports
+  many other important features which we use extensively in this paper (e.g. feature extraction from projects). 
+  Accordingly,
+   while we show that the Commit.Guru's issue labelling  could be improved, we strongly endorse the use of that tool.
+  
+    
+\begin{table*}
+\caption{Data used in this study.}\label{tbl:data}
+ 
+~\hrule~
+ 
+
+\begin{minipage}{.45\linewidth}
+
+{\bf \tbl{data}a: Data selection and pruning.}
+\vspace{1mm}
+{\small 
+ 
+678 computational science projects were identified.
+Many of these are purely personnel projects (or just used for web storage)
+so following the advice of Kalliamvakou et al.~\cite{Kalliamvakou:2014}, we used the sanity
+checks of \tbl{data}b} to prune these  to 59 projcts.
+On these, we  use nine  (selected to cover a  range of languages):
+\bi
+\item PCMSOLVER:   API to the Polarizable Continuum Model \cite{pcmsolver}.
+\item XENON: middleware      interface to  compute \& storage resources \cite{xenon}.
+
+\item MDANALYSIS: Python code to analyze molecular dynamics trajectories generated  from other simulation packages \cite{mdanalysis}.
+\item  HOOMD:  particle simulation  for  hard particle Monte Carlo simulations of a many shape classes  \cite{hoomd}.  
+\item ABINIT  : an atomic-scale simulation software suite \cite{Abinit}.
+\item  AMBER: Fast, parallelized molecular dynamics   analysis \cite{Amber-MD}.
+
+\item  RMG-PY: the Python Reaction Mechanism Generator.  Generates chemical reaction mechanisms for modeling reaction systems \cite{ReactionMechanismGenerator}.
+\item LAMMPS: Large-scale Atomic/Molecular Massively Parallel Simulator, a classical molecular dynamics simulation code \cite{lammps-sandia}.
+\item LIBMESH:   numerical simulation of partial differential equations   on serial and parallel platforms.  \cite{libMesh}.
+\ei
+For statistics on these systems, see \tbl{data}c.
+
+\end{minipage}~~~~\begin{minipage}{.55\linewidth}
+ \begin{center}
+{\bf \tbl{data}b: Sanity checks (designed using~\cite{Kalliamvakou:2014}).}
+
+
+{\footnotesize
+ \begin{tabular}{r|l}
+Check   & Condition    \\\hline
+Personal purpose (\# Developers) & $>$ 7 \\
+Collaboration (Pull requests)  & $>$ 0 \\
+Issues & $>$ 10 \\
+Releases &  $>$ 1 \\
+Commits & $>$ 20 \\
+Duration  & $>$ 1 year 
+\end{tabular}}
+
+
+\vspace{0.3cm}
+
+{\bf \tbl{data}c: Statistics on selected systems.}
+
+\vspace{2mm}
+
+\resizebox{\linewidth}{!}{
+\begin{tabular}{r@{~}|r@{~}|r@{~}|r@{~}|r@{~}|r@{~}|r@{~}}
+\begin{tabular}[r]{@{}c@{}}   \end{tabular} & \begin{tabular}[c]{@{}c@{}}  \end{tabular} & \begin{tabular}[c]{@{}c@{}} \textbf{Duration} \end{tabular} & \begin{tabular}[c]{@{}c@{}} \textbf{No. of} \end{tabular} & 
+\begin{tabular}[c]{@{}c@{}} \textbf{No. of}\end{tabular} & \textbf{No. of} & \textbf{Buggy}  \\
+\textbf{DATASET}&\textbf{Language} & \textbf{(years)} & \textbf{Developers} & \textbf{Changes} & \textbf{Releases} &  \textbf{Commit \%} \\ \hline
+HOOMD & C++ & 3 & 41 & 3904 & 6  & 16 \\ 
+LIBMESH & C & 6.5 & 56 & 7801 & 8 & 16 \\
+ABINIT & Fortran & 2.5 & 23 & 3911 & 9 & 18  \\  
+LAMMPS & C++ & 5.5 & 84 & 5587 & 7 & 18 \\ 
+PCMSOLVER & C++ & 4.5 & 8 & 1655 & 2  & 23  \\ 
+AMBER & C++ & 4.5 & 11 & 4243 & 4  & 23 \\ 
+RMG-PY & Python & 9.5 & 47 & 4472 & 7 & 27   \\ 
+MDANALYSIS & Python & 4 & 80 & 2733 & 8  & 37  \\  
+XENON & Java & 6 & 11 & 1804 & 7  & 46  \\ 
+\end{tabular}
+}
+
+\end{center}
+\end{minipage} 
+~\hrule~
+\end{table*}
+  
+  
+
+  
+%   regardless of studies showing low accuracy performance even with the help of topic modeling \cite{fu05committopic}. 
+  
+%  shows decisions of 15 commit messages and a lot of them can be incorrectly labeled by the traditional automatic
+% keyword approach (i.e. looking for presence of the Table \ref{tab:words} terms in the commit message). 
+
 
 %is a far more human-facing process which inherently
 
-\begin{figure}[!t]
-\includegraphics[width=\linewidth]{summary.PNG}
-\vspace{-14pt}
-\caption{Summarized data mining pipeline of $F^3T$ versus the state-of-the-art system (i.e. Commit.Guru \cite{commitguru}) for risky software commit prediction. Blue left flow represents Commit.Guru system while Green right flow represents our recommended system, $F^3T$.}\label{fig:system}
-\vspace{-6mm}
-\end{figure} 
+% \begin{figure}[!t]
+% \includegraphics[width=\linewidth]{summary.PNG}
+% \vspace{-14pt}
+% \caption{Summarized data mining pipeline of $F^3T$ versus the state-of-the-art system (i.e. Commit.Guru \cite{commitguru}) for risky software commit prediction. Blue left flow represents Commit.Guru system while Green right flow represents our recommended system, $F^3T$.}\label{fig:system}
+% \vspace{-6mm}
+% \end{figure} 
 
-\input{sample_commits.tex}
+%But how to capture human knowledge about what issues should be explored or ignored?
+%Current practice it so use a
+
+
+
 %These commit messages include specialized grammars and contents.
 % Current practice of developers in software maintenance involved them describing these maintenance in commit messages.
 
 
-One important aspect of software maintenance is to find the defects within the software in order to allocate relevant resources to fix it and  approximate the trend how the defects occur for bettering future practices of software maintenance \cite{menzies10dp, menzies07dp, ambros10extensive, nagappan05codechurn,elbaum00codechurn, moser08changemetrics, hassan09codechanges}.  Due to the importance of defect prediction, numerous studies this past decade proposed methods to help identify defects. Researchers have analyzed source code (e.g., by code metrics or code smells) \cite{menzies07defect, menzies10dp, ambros10extensive}, or source code comments and commit messages introduced by a developer intentionally describing their work \cite{mockus00changeskeys, hindle08_largecommits, Kim08changes, kamei12_jit}. For e.g., one commit in the ABINIT project is ``\texttt{Fixed bug in DDB interpolation}'' indicates that the corresponding code was ``fixed'' just now to handle DDB interpolation. Therefore, before the patch of this issue got fixed, the previous code has bugs and researchers applied  (1) Sliwerski, Zimmermann, and Zeller algorithm (SZZ)  traced back the commit that introduced the bugs \cite{costa17szz, Kim08changes, Sliwerski05changes}, (2) collect the metrics associated with the bugs \cite{menzies07dp, commitguru, kamei12_jit}, (3) build defect predictors on them \cite{agrawal2018better, di18_fft, Tu18Tuning, ghotra15}. 
-Figure \ref{fig:system} shows this pipeline,
-bas instantiated by the Commit.Guru tool~\cite{commitguru} (illustrated as the blue flow). 
+% One important aspect of software maintenance is to find the defects within the software in order to allocate relevant resources to fix it and  approximate the trend how the defects occur for bettering future practices of software maintenance \cite{menzies10dp, menzies07dp, ambros10extensive, nagappan05codechurn,elbaum00codechurn, moser08changemetrics, hassan09codechanges}.  Due to the importance of defect prediction, numerous studies this past decade proposed methods to help identify defects. Researchers have analyzed source code (e.g., by code metrics or code smells) \cite{menzies07defect, menzies10dp, ambros10extensive}, or source code comments and commit messages introduced by a developer intentionally describing their work \cite{mockus00changeskeys, hindle08_largecommits, Kim08changes, kamei12_jit}. For e.g., one commit in the ABINIT project is ``\texttt{Fixed bug in DDB interpolation}'' indicates that the corresponding code was ``fixed'' just now to handle DDB interpolation. Therefore, before the patch of this issue got fixed, the previous code has bugs and researchers applied  (1) Sliwerski, Zimmermann, and Zeller algorithm (SZZ)  traced back the commit that introduced the bugs \cite{costa17szz, Kim08changes, Sliwerski05changes}, (2) collect the metrics associated with the bugs \cite{menzies07dp, commitguru, kamei12_jit}, (3) build defect predictors on them \cite{agrawal2018better, di18_fft, Tu18Tuning, ghotra15}. 
+% Figure \ref{fig:system} shows this pipeline,
+% bas instantiated by the Commit.Guru tool~\cite{commitguru} (illustrated as the blue flow). 
 
-%The premise of this paper is that, apart from the problem addressed by SZZ, there is {\em another} part of the Figure \ref{fig:system}  that deserves more attention.
-Most prior research in software analytics focuses on bug-inducing commits identification, metrics collection, and prediction (the later parts of the pipeline). The problem of automating labeling these commits in Table \ref{tab:words}  is rarely explored, even though this step is the primary task of Figure \ref{fig:system} to get the ``right'' data for consequent tasks. Current practice in software analytics is to categorize these commit messages via the set intersection of the text against a list of keywords (see Table \ref{tab:words}). Vasilescu et al. \cite{Vasilescu15github} remarked that this categorization process is central for researchers to generating defect prediction learning on changes level \cite{commitguru, Kim08changes, catolino17_jitmobile, nayrolles18_clever} regardless of studies showing low accuracy performance even with the help of topic modeling \cite{fu05committopic}. For instance, Table \ref{tbl:sample} shows decisions of 15 commit messages and a lot of them can be incorrectly labeled by the traditional automatic
-keyword approach (i.e. looking for presence of the Table \ref{tab:words} terms in the commit message).  It is timely to call for an empirical study for assessing and exploring the labeling process for software analytics, especially risky software commits prediction. Hence, this paper and our recommended system, $F^3T$ (illustrated as the green flow in Figure \ref{fig:system}).
+% %The premise of this paper is that, apart from the problem addressed by SZZ, there is {\em another} part of the Figure \ref{fig:system}  that deserves more attention.
+% Most prior research in software analytics focuses on bug-inducing commits identification, metrics collection, and prediction (the later parts of the pipeline). The problem of automating labeling these commits in Table \ref{tab:words}  is rarely explored, even though this step is the primary task of Figure \ref{fig:system} to get the ``right'' data for consequent tasks. Current practice in software analytics is to categorize these commit messages via the set intersection of the text against a list of keywords (see Table \ref{tab:words}). Vasilescu et al. \cite{Vasilescu15github} remarked that this categorization process is central for researchers to generating defect prediction learning on changes level \cite{commitguru, Kim08changes, catolino17_jitmobile, nayrolles18_clever} regardless of studies showing low accuracy performance even with the help of topic modeling \cite{fu05committopic}. For instance, Table \ref{tbl:sample} shows decisions of 15 commit messages and a lot of them can be incorrectly labeled by the traditional automatic
+% keyword approach (i.e. looking for presence of the Table \ref{tab:words} terms in the commit message).  It is timely to call for an empirical study for assessing and exploring the labeling process for software analytics, especially risky software commits prediction. Hence, this paper and our recommended system, $F^3T$ (illustrated as the green flow in Figure \ref{fig:system}).
 
  
  %``risky, not risky''\footnote{Which is Commit.Guru's way of denoting "buggy" or "not buggy".} 
@@ -294,101 +601,152 @@ keyword approach (i.e. looking for presence of the Table \ref{tab:words} terms i
 %\item Manual methods where humans reflect more on the commit messages and their categorization are recommended.
 %\ei
 
-This work essentially addresses the challenges raised by Vasilescu et al. \cite{Vasilescu15github}. They recommended that the process is explored in an iterative manner where commit categories are studied manually as human engineers adjust the regular expressions containing these keywords.  We conducted a detailed examination of the process of categorizing comments to find that purely automatic method that merely uses syntactic criteria like  {\em words} from Table \ref{tab:words} can perform worse than the {\em combination} of Human+AI. At least in the particular case of studying textual artifacts from software projects, humans have more insight into those artifacts that AI.  More generally, we caution that humans should never be replaced by just AI algorithms. 
-
-\begin{table}
-\small
-\caption{Words and Categories for Classifying Commits \cite{hindle08_largecommits}}\label{tab:words}
-\vspace{-10pt}
- {\footnotesize \begin{tabular}{l|l}
-\textbf{Category}  & \textbf{Associated Words}    \\\hline
-Corrective & \texttt{bug, fix, wrong, error, fail, problem, patch} \\
-Feature Addition & \texttt{new, add, requirement, initial, create} \\
-Merge & \texttt{merge} \\
-Non Functional & \texttt{doc} \\
-Perfective & \texttt{clean, better} \\  
-Preventive & \texttt{test, junit, coverage, asset} \\
-\end{tabular}}
-\vspace{-8mm}
-\end{table}
+% This work essentially addresses the challenges raised by Vasilescu et al. \cite{Vasilescu15github}. They recommended that the process is explored in an iterative manner where commit categories are studied manually as human engineers adjust the regular expressions containing these keywords.  We conducted a detailed examination of the process of categorizing comments to find that purely automatic method that merely uses syntactic criteria like  {\em words} from Table \ref{tab:words} can perform worse than the {\em combination} of Human+AI. At least in the particular case of studying textual artifacts from software projects, humans have more insight into those artifacts that AI.  More generally, we caution that humans should never be replaced by just AI algorithms. 
 
 
 
-That said,  adding humans into an analytic process is time-consuming. In the sample of commit messages explored by this study, commit messages are two to four lines long, and these can be read and critiques by humans at a rate of no more than ten per minute. This means that while automatic tools can read a billion commit messages in a minute, humans struggle to analyze ten. Hence, before we can advocate partnerships of human and artificial intelligence for software analytic, we must somehow manage and minimize the work required by the human partner.
 
-Accordingly, this paper explores {\em active learning} methods to implement the human+AI partnership. The key idea behind active learning is that a machine learning algorithm can train faster (i.e., using less data) if it is allowed to choose the data from which it learns~\cite{settles2012active}. The experience in other domains is that such active learners can significantly reduce the amount of effort required to achieve high recall~\cite{Cormack2017Navigating, Cormack2016Engineering, cormack2016scalability, Cormack2015Autonomy, Cormack2014Evaluation, Wallace2010Semi, wallace2010active, wallace2011should, wallace2012class, nguyen2015combining, Yu2018Recall}. Our approach initially uses uncertainty sampling to fast build a reliable model, then switches to certainty sampling to greedily find buggy commits files. This strategy significantly reduces the effort required to find some desired level of high recall of buggy commits.
 
-To test this approach, we categorized $45,000+$ commits from nine different computational softwares using (a)~the standard keyword methods and (b)~the active learning method described previously. 
-
-Data acquisition comes prediction.  State-of-the-art data mining methods for software analytics include Synthetic Minority Oversampling Techniques (SMOTE) to handle class imbalance \cite{agrawal2018better, kamei12_jit} in combination with standard miners (Random Forest (RF), Logistic Regression (LR), and Support Vector Machine (SVM)). However, Chen et al. \cite{di18_fft} recommended Fast-Frugal Trees as the prediction model where it demonstrated that the model have dominated other standard methods for defect prediction and close issues prediction. Therefore, our recommended system to explore and improve the state-of-the-art risky software prediction of $F^3T$ as the combination of FASTREAD labeling method and FFTs predicting model will be validated with the comparisons against other standard data mining methods and answering the following research questions:
-
-\textbf{RQ1: { How close are FASTREAD and Keyword Labeling to Human Labeling?}}
+% That said,  adding humans into an analytic process is time-consuming. In the sample of commit messages explored by this study, commit messages are two to four lines long, and these can be read and critiques by humans at a rate of no more than ten per minute. This means that while automatic tools can read a billion commit messages in a minute, humans struggle to analyze ten. Hence, before we can advocate partnerships of human and artificial intelligence for software analytic, we must somehow manage and minimize the work required by the human partner.
  
-Software maintenance is a continuing process, and software developers have the domain expertise in understanding the commit logs. 25,000+ commits are crossed labeled by SE Ph.D. students from 4 projects. With the initial assumption that software maintenance requires the expert's understanding, these human-labeled commit logs data from those four initial sampled repositories serves as the ground truth to compare the effectiveness of automatic Keywords versus FASTREAD tagging. FASTREAD statistically significant won across four cases with our three evaluation metrics of precision, recall, and false-alarms (up to 38\% precision, 31\% recall and 111\% false-alarm).
- 
- %Four popular repositories that satisfy our sanity checks were picked at random, and their commit logs were sampled to be labeled for bug-fixing commits by a human. 
-
-\begin{RQ}{}
-\vspace{-10pt}
-
-FASTREAD as the method for bug-fixing commits augmentation is better than current automatic keyword tagging.
-\end{RQ}
- 
- 
- \textbf{RQ2: { How are risky software commit prediction based on FASTREAD labeled data perform against state-of-the-art method (Keyword) labeled data?}}
-  
-%From the bug-fixing commits, we can track back to find bug-inducing commits that introducing defects to the software. Each of these commits will be analyzed, and recommended metrics are extracted to describe how risky each commit is. 
-
-The right green flow in Figure \ref{fig:system} demonstrated our approach to improve the correctness of finding the bug-fixing commits. When the right bug-inducing commits are linked and analyzed to extract relevant values of metrics, a more robust model to predict future risky software commits is built. FFTs is validated as our chosen data miner when FFTs dominated the three standard methods (SMOTE+RF, SMOTE+LR, and SMOTE+SVM) in our experiment described in section 4 (RQ2). By winning 7 (78\%) for G-value and 6 (67\%) for $P_{opt}$ out of 9 projects, FFTs model built on FASTREAD labeled data outperform FFTs model built on Keyword labeled data. 
- 
-
-\begin{RQ}{}
-\vspace{-10pt}
-FASTREAD labeled data are more fit and higher quality for risky software commit prediction. Automatic Keywords labeling method for defective software commit is deprecated for future defect prediction work.  
-\end{RQ}
-  
-
-\textbf{RQ3: {How state-of-the-art risky software commit identification and prediction system, Commit.Guru, comparing to our recommended $F^3T$ system in predicting risky software commit?}}
- 
-%Data quality also comes from the proportion of the labels within the dataset. Agrawal et al. \cite{agrawal2018better} has found that imbalance class problem is apparent within defect prediction research. Although our study is not defect prediction, it does inherit a lot of defect prediction problem's nature where most of the commits are not bug-inducing commits. Risky software commit prediction also exhibit an imbalance class problem. Outside of data quality, data miner should be chosen carefully to leverage the nature of the problem and the dataset itself. 
-
-Current state-of-the-art risky software commit identification and prediction system is Commit.Guru (Keyword + Logistic Regression) that illustrated in the left blue flow in Figure \ref{fig:system}. However, FASTREAD is proven to improve the dependent features quality, or the correctness of risky software commit identification, the target for prediction task (from RQ1 and RQ2) while FFT has proven to be a robust data miner for software analytics task. Our proposed system of $F^3T$ (FASTREAD+FFTs) dominated on G-values with statistically significants win on all 9 projects and improvement  of the absolute delta up to 48\%. For $P_{opt}$,  $F^3T$ won 7 out of 9 projects with the absolute delta up to 26\%. 
-
-  
-\begin{RQ}{}
-\vspace{-10pt}
-$F^3T$ outperformed state-of-the-art risky software commit identification and prediction system, Commit.Guru. $F^3T$ is recommended as a new baseline for future research work.
-\end{RQ}
-
-%  \textbf{RQ4: { How the FFT model comparing to state-of-the-art methods in predicting risky software commit?}}
- 
-%  Modern state-of-the-art methods do include more than just Logistic Regression such as Random Forest (RF) and Support Vector Machine (SVM) for more complex problems in combination with Synthetic Minority Oversampling Technique (SMOTE) to handle class imbalance problem. It is essential to validate our data miner of choice FFT by comparing it against state-of-the-art data miners. With seven wins, one loss, and one tie, FFT model outperformed state of the art data miner in risky software commit prediction.  
-
- 
-% \begin{RQ}{}
-% \vspace{-10pt}
-% FFT model outperformed state-of-the-art risky software commit prediction and is recommended as a new baseline for future work in risky software commit prediction.
-% \end{RQ}
-
-\noindent
-In summary, the main contributions of this paper are:
-\bi
-% \\item 
-% \item Fastread labeling offer higher quality data for predicting risky software commit than state-of-the-art labeling method, Commit.Guru's automatic keyword labeling.  
-% \item FFT as a recommended data mining model offer better improvement of performance scores than state-of-the-art methods, Commit.Guru's Logistic Regression. 
-\item A first novel inter-disciplinary contribution of human+AI partnership and psychological science in software quality assurance. 
-\item A demonstration of Human+AI partnership for software analytics outperforming approaches that are solely abusing AI. 
-\item An assessment of active learning for data ingestion quality problem by reproducing prior approach and comparing it with our recommended system.  
-\item A reproduction package containing all the data and algorithms of this paper, see \url{https://github.com/anonymous-for-review}.
-\ei
-
-
-
-The rest of this paper is structured as follows. Background work is discussed  in section 2. 3 describes our empirical methodology and experimental design.  This is followed by the details of the experiment results while answers the research questions. Threats are analyzed in 5. future work is provided in 6. 
-
-
 
 \section{Background}
+
+\subsection{Is Labelling Really  a Problem?}
+
+For commit messages such as those seen in \tbl{sample},
+generating good labels is difficult. Firstly, there is the semantic issues
+of getting the right labels. As see in \fig{rq3_1}, good labelling can lead to dramatically better   predictions.
+
+Secondly, labelling is a time consuming task. While most commit message are short\footnote{The sample  in \tbl{sample} reflects the median size of these messages.},
+the   nine projects studied in this paper \tbl{data} have 36,000 commits.
+Based on experience
+with running all-day data-labelling sessions (using  teams of graduate students),
+we assert that labelling these  36,000 commit messages
+requires 40 to 80 person hours.  
+
+These nine projects are just a sample of the 59 computational science projects we can currently find on Github. We suspect that an order of magnitude
+such projects exist (and we have not found them yet).
+Assuming these 590 projects have  the same commit frequency as the nine,
+then labelling all requires  139 weeks of work.
+Further,  if a second human 
+is used to check the labels,  this estimate grows to 260 weeks. 
+
+Using the Mechanical Turk crowdsourcing tool and our experience
+with reading tens of thousands of commits, we can estimate  how much grant
+money we would needed to   buy
+enough crowdworkers to handle the above. Our estimate assumes
+(a)~two workers per issue; (b)~a 50\% ``cull rate'' of results (when quality control
+questions rule our ineffective crowdworkers);   (c)~workers being paid at least
+minimum wage; (d)~and our university extracting a 50\% overhead tax.
+Under those assumptions, labelling these Github issues would
+require a half million dollar grant (with nothing left over
+for graduate student wages or other equipment). 
+
+By way
+of contrast, we estimate that using $F^3T$ for the same
+task would require a \$40K grant.  For details on how we make this
+calculation, see later in this paper.
+
+\subsection{Why Study Computational Software?}
+
+The standard case study in a current SE research paper on software analytics is xxx supporting the kinds of development seen at Google, Facebook or Amazon
+
+But there are many kinds of software any give our research goal (stated at start of the Introduction),
+we want to support as many different kinds as possible.
+If   keyword methods are only good for particular types of software,
+then it becomes an open and pressing research issue to explore methods
+for learning good labelling methods for new software types. 
+If there is some local learning required to (e.g.) tune   issue labelling,
+then our analytics methods should be extended to include issue labelling. Hence, this paper.
+
+There a re other reasons to study computational science software. Hurricanes. etc
+
+
+\subsection{Why Study Defect Prediction?}
+
+
+Regardless of its specialized nature, 
+computational science has much to teach software engineering.
+For one thing, it is can be used to 
+ stress test
+the generality of  existing empirical SE methods.
+Consider the results of \tbl{sample} and \fig{rq3_1} where  a standard method  (keywords to identify worrying commit) fails very badly
+when applied to computational science software.
+This result is suggestive (but not conclusive) evidence that (a)~prior work on analytics has over-fitted
+its methods (to just systems like Apache);  and that (b)~it is 
+now time to develop new methods like $F^3T$.
+
+This section discusses defect prediction and  the rest of this paper discussed applications of $F^3T$ to that task.
+
+Before doing that, we digress to note that the methods of  this paper would be useful and relevant for any analytics
+tasks that requires human opinions about issue messages entered into a repository.
+For example, in other work we we have preliminary
+results (currently under development)
+suggesting that parts of $F^3T$   could  work for  predicting technical detail;
+recognizing vulnerable software; prioritizing test cases;
+and for determining which test reports are false alarms that can be ignore.
+Further, as listed in the introduction,
+other analytics tasks that could use $F^3T$ to build predictors for 
+bad smells~\cite{KRISHNA201753} or recognizing
+technical debt~\cite{huang2018identifying}. XXXX
+
+This paper focuses on defect prediction~\cite{menzies07dp}
+but other tasks that need such ground truths include learning  
+predict for (a)~failing test cases~\cite{zhu2018test}; (b)~increased
+technical debt~\cite{huang2018identifying};   or
+(c)~adding bad smells~\cite{KRISHNA201753}; or (d)~creating  potentially security vulnerabilities~\cite{yu18v}.
+
+\subsubsection{Defect Prediction: Overview}
+It turns out that software developers are smart, but sometimes make mistakes. Hence, it is essential to test software before the deployment ~\cite{orso2014software,barr2015oracle,yoo2012regression, myers2011art}. 
+ Software quality assurance budgets are finite while assessment effectiveness increases exponentially with assessment effort~\cite{Fu2016TuningFS}. Therefore,  standard practice is to apply the best available methods on code sections that seem most critical and bug-prone.
+Software bugs are not evenly distributed across the project~\cite{hamill2009common,koru2009investigation, ostrand2004bugs,misirli2011ai}.  Hence, 
+a useful way to perform software testing is to allocate most assessment budgets to
+the more defect-prone parts in software projects.    Data mining algorithms can input
+features extracted from source code and output predictors for where defects are likely to occur.
+Such  predictors are never 100\% correct. But
+they can be used to suggest where to focus more expensive methods. 
+
+There is  much  commercial interest  in  defect prediction.  In a survey of  395 practitioners from 33 countries and five continents,
+ Wan et al.~\cite{wan18} found that over 90\% of
+ the respondents were willing to adopt defect prediction
+ techniques. 
+ 
+ Other results from commercial deployments show the benefits of defect prediction.
+When Misirli et al.~\cite{misirli2011ai} built a  defect prediction model  for a telecommunications company, those  models
+could  predict 87 percent of code defects.
+Those models also decreased inspection efforts by 72 percent, and hence reduce post-release defects by 44 percent. Also, when Kim et al.~\cite{kim2015remi} applied defect prediction model, REMI, to API
+development process at Samsung Electronics, they could
+predict the bug-prone APIs with reasonable accuracy~(0.68 F1 score)
+and reduce the resources required for executing test cases.
+
+
+
+Software defect predictors not only save labor compared with traditional manual methods, but they are also competitive with certain automatic methods.  
+At ICSE'14, Rahman et al. ~\cite{rahman2014comparing} compared (a) static code analysis tools FindBugs, Jlint, and PMD with (b) defect predictors (which they called ``statistical defect prediction'') built using logistic  regression.
+They found no significant differences in the cost-effectiveness of these approaches.  
+
+Given this equivalence, it is significant to
+note that static code defect prediction can be quickly adapted to new languages by building lightweight parsers to extract static code metrics such as \tbl{ck}. The same is not true for static code analyzers - these need extensive modification before they can be used in new languages.
+
+\subsubsection{Defect Prediction: Details}
+
+For defect prediction to work on Github data, the following pipleline has to be created.
+Firstly, as discussed above, Github issues reports have to be labelled. 
+  \bi
+  \item
+  Label Github commit message via its
+  overlap  with a set of worrying  keywords like  Table \ref{tab:words};
+  \item Then use soemthing like the SZZ algorithm~\cite{costa17szz, Kim08changes, Sliwerski05changes} to work back in time to  identify what code changes lead to the worry.
+  \item Then summarize that code  as a set of features, divided into two buckets (according to whether or not they were associated with  ``worrying'' issue reports). 
+  \item Then train a binary classifier  to learn what code features predict for ``worry=yes'' or ``worry=no''.
+  \ei
+  
+\subsection{Details of Defect Prediction}
+
+Dream automaitc. in reality certain sub-tasks in th defect prediction rpocess have 
+required decades of research.
+
 
 \subsection{Defect Commit Logs Labeling}
 
@@ -428,14 +786,14 @@ In order to achieve the combination, {\em active learning} is adapted. It can tr
 
  
 
-Firstly, to understand how FASTREAD was designed with active learning for smart and efficient bug-fixing commits labeling, consider the FASTREAD algorithm \cite{Yu2018} starting with the decision plane between the bug-fixing commits and other commits in \fig{svm}. Suppose we want to find more buggy commits and we had access to, say, a support vector machine (SVM) model built from some examples seen to date. 
-One tactic for quickly finding those buggy commits would be to ask humans to review and assess a few dozens \begin{wrapfigure}{r}{1.3in}
+\begin{wrapfigure}{r}{1.3in}
 \vspace{-10pt}
 \hspace{-12pt}
 \includegraphics[width=1.4in]{svm.png}
 \vspace{-5pt} \hspace{-25pt} \caption{ Separating risky (red) from  non-risky (green) files.}\label{fig:svm}
 \vspace{-15pt}
-\end{wrapfigure}  of commits that fall into the red region of this figure, as far as possible from the green ones (i.e. {\em certainty sampling}). Another tactic would be to verify the position of the boundary, inspect unclassified files that are closest to the boundary (i.e. {\em uncertainty sampling}). Our approach initially uses uncertainty sampling to fast build a reliable model, then switches to certainty sampling to greedily find bug-fixing commits. Holistically,  the machine learner (i.e. SVM) use this feedback from human to learn their models incrementally. These models are then used to sort the stream of commit messages such that humans read the most informative ones first. This strategy significantly reduces the effort required to find some desired level of high recall of buggy commits.
+\end{wrapfigure}  Firstly, to understand how FASTREAD was designed with active learning for smart and efficient bug-fixing commits labeling, consider the FASTREAD algorithm \cite{Yu2018} starting with the decision plane between the bug-fixing commits and other commits in \fig{svm}. Suppose we want to find more buggy commits and we had access to, say, a support vector machine (SVM) model built from some examples seen to date. 
+One tactic for quickly finding those buggy commits would be to ask humans to review and assess a few dozens of commits that fall into the red region of this figure, as far as possible from the green ones (i.e. {\em certainty sampling}). Another tactic would be to verify the position of the boundary, inspect unclassified files that are closest to the boundary (i.e. {\em uncertainty sampling}). Our approach initially uses uncertainty sampling to fast build a reliable model, then switches to certainty sampling to greedily find bug-fixing commits. Holistically,  the machine learner (i.e. SVM) use this feedback from human to learn their models incrementally. These models are then used to sort the stream of commit messages such that humans read the most informative ones first. This strategy significantly reduces the effort required to find some desired level of high recall of buggy commits.
 
 FASTREAD was designed and evaluated after testing and comparing against 32 different active learners generated from three prior state of the art methods from the medical and legal literature - Wallace et al. and Cormack et al. \cite{wallace2010active, Cormack2015Autonomy}. FASTREAD dramatically reduces manual reading methods (linear review) by an order of magnitude fewer papers are required to be reviewed to find 95\% of the relevant ones. When compared to current state of the art automatic methods - Wallace and Cormack \cite{wallace2010active, Cormack2015Autonomy}, FASTREAD reviews up to 50\% fewer papers while finding the same number of relevant papers. While FASTREAD is proven to be effective in reducing efforts for reviewing literature, defect prediction can benefit from FASTREAD to build a personalized topic model for the specific project to identify the bug-fixing commits.  
 
@@ -512,7 +870,7 @@ FASTREAD was designed and evaluated after testing and comparing against 32 diffe
 \vspace{-10pt}
 \label{tbl:metrics}
 \resizebox{\linewidth}{!}{
-\begin{tabular}{l|l|l|p{12cm}|}
+\begin{tabular}{l|l|l|p{10cm}|}
 \hline
 \rowcolor{gray!60}Dimension & Name & Definition & Rationale \\\hline
 \multirow{5}{*}{Diffusion} & NS & Number of modified subsystems & Changes modifying many subsystems are more likely to be defect-prone \\\cline{2-4}
@@ -562,7 +920,7 @@ Therefore, significant SE research has focused on software analytics and the pre
 Previous studies have focused on the prediction of risky software changes for short-term quality assurance. Mockus and Weiss predicted the risk of a software change at coarse-grained granularity in an industrial project with features such as \# of subsystems touched,\# of files modified, \# of modification requests. Through studying defect-introducing changes in the Mozilla and Eclipse, Sliwerski \cite{Sliwerski05changes} found that large transaction of code would include defect and changes done on specific time have a higher change of introducing defects, especially Friday. Eyolfson et al. \cite{Eyolfson11bugginess} noted that software changes performed late night (between midnight and 4 AM) are more buggy than changes committed morning (7 AM and noon) and that developers who commit regularly produce less buggy changes.  A study
 that characterizing incorrect defect fixes in Linux, OpenSolaris, FreeBSD, and a commercial operating system by Yin et al. \cite{Yin11fixes} found that 14.8\%-24.2\%  of fixes are incorrect and affect end users, that concurrency defects are the most difficult to fix, and that developers responsible for incorrect fixes usually do not have enough knowledge about the code being changed.
 
-Inspired by their work, Kamei et al. did a large scale study of the Just-in-time (JIT) software change on a set of 6 open source projects and 5 commercial projects through the 14 metrics categorized into 5 dimensions of diffusion, size, purpose, history, and experience  \cite{kamei12_jit}. To the most recent work, Kim et al. \cite{Kim08changes} sampled a balanced subset of changes and use source code change logs in several open source projects and obtained 78 percent
+Inspired by their work, Kamei et al. \cite{kamei12_jit} completed a large scale study of the Just-in-time (JIT) software change on a set of 6 open source projects and 5 commercial projects through the 14 metrics categorized into 5 dimensions of diffusion, size, purpose, history, and experience. To the most recent work, Kim et al. \cite{Kim08changes} sampled a balanced subset of changes and use source code change logs in several open source projects and obtained 78 percent
 accuracy and a 60 percent recall. However, Kamei's work use the combination of change logs and the change metrics, reported in Table \ref{tbl:metrics}, predicting defect-inducing chnages with 68\% accuracy and 64\% recall with lower fraction bug inducing changes. 
 Barnett et al. extended Commit.Guru to include commit volume and Naive-Bayes (NB) score on how risky a commit content is on 342 MSR coding data challenge repositories to incorporate the relationship between commit message detail and defect pronerective, adaptive, or perfective issues \cite{barnett13_mcontent}.  
 
@@ -582,17 +940,22 @@ From all of the above work, we noticed:
 
  {\normalsize
 \begin{minipage}{\linewidth}
+
 \vspace{-5mm}
-\begin{tabular}{p{\linewidth}}
-  \texttt{\qquad  if  \qquad \ \ \ LA $<$  10   \qquad \qquad  \ then false \qquad \#0} \\
-  \texttt{\qquad  else if \ \ Entropy $\geq$  0.65    \ \      then true \qquad \  \#1} \\
-   \texttt{\qquad else if \ \ NS $>$  3   \qquad \qquad \ \   then true \qquad \  \#1} \\
-   \texttt{\qquad else if \ \ FIX $==$ 1    \qquad \qquad  then true \qquad \  \#1} \\
-   \texttt{\qquad else \qquad \qquad \qquad \qquad \ \ \ \ \ \ \ false \ \  \ \ \ \ \ \  \#0} 
-\end{tabular}
+\footnotesize
+\begin{lstlisting}[
+  mathescape,
+  basicstyle=\ttfamily,
+]
+    if          LA $<$ 10            then False  #0
+    else if     Entropy $\geq$ 0.65     then True   #1
+    else if     NS $>$ 3             then True   #1
+    else if     FIX $==$ 1            then True   #1
+    else                          False       #0
+\end{lstlisting}
+  
 \end{minipage}
 }
-\vspace{-5mm}
 \caption{Example of an FFT}
 \label{fig:fft1}
 \end{figure}
@@ -632,8 +995,8 @@ depths are very succinct
 \begin{tabular}{c@{~}|r@{~}|r@{~}|r@{~}|r@{~}}
 \begin{tabular}[c]{@{}c@{}} \end{tabular} & \begin{tabular}[c]{@{}c@{}} \textbf{No. of}\end{tabular} & \textbf{No. of} & \textbf{Defective}  \\
  \textbf{Dataset} & \textbf{Commits} & \textbf{Releases} &  \textbf{Commit \%} & \textbf{Source}\\ \hline
-HOOMD & 3904 & 8  & 16 & \cite{hoomd} \\ 
-LIBMESH & 7801 & 10 & 16 & \cite{libMesh} \\
+HOOMD & 3904 & 6  & 16 & \cite{hoomd} \\ 
+LIBMESH & 7801 & 8 & 16 & \cite{libMesh} \\
 ABINIT & 3911 & 9 & 18 & \cite{Abinit} \\  
 LAMMPS & 5587 & 7 & 18 & \cite{lammps-sandia} \\ 
 PCMSOLVER & 1655 & 2  & 23 & \cite{pcmsolver}  \\ 
@@ -684,10 +1047,63 @@ Releases &  $>$ 1 \\
 Commits & $>$ 20 \\
 Duration  & $>$ 1 year 
 \end{tabular}
-\vspace{-17pt}
+\vspace{-12pt}
 \end{table}
 
 
+
+\subsection{Research Questions}
+
+
+% Data acquisition comes prediction.  State-of-the-art data mining methods for software analytics include Synthetic Minority Oversampling Techniques (SMOTE) to handle class imbalance \cite{agrawal2018better, kamei12_jit} in combination with standard miners (Random Forest (RF), Logistic Regression (LR), and Support Vector Machine (SVM)). However, Chen et al. \cite{di18_fft} recommended Fast-Frugal Trees as the prediction model where it demonstrated that the model have dominated other standard methods for defect prediction and close issues prediction. Therefore, our recommended system to explore and improve the state-of-the-art risky software prediction of $F^3T$ as the combination of FASTREAD labeling method and FFTs predicting model will be validated with the comparisons against other standard data mining methods and answering the following research questions:
+
+\textbf{RQ1: { How close are FASTREAD and Keyword Labeling to Human Labeling?}}
+ 
+Software maintenance is a continuing process, and software developers have the domain expertise in understanding the commit logs. 25,000+ commits are crossed labeled by SE Ph.D. students from 4 projects. With the initial assumption that software maintenance requires the expert's understanding, these human-labeled commit logs data from those four initial sampled repositories serves as the ground truth to compare the effectiveness of automatic Keywords versus FASTREAD tagging. FASTREAD statistically significant won across four cases with our three evaluation metrics of precision, recall, and false-alarms (up to 38\% precision, 31\% recall and 111\% false-alarm).
+ 
+ %Four popular repositories that satisfy our sanity checks were picked at random, and their commit logs were sampled to be labeled for bug-fixing commits by a human. 
+
+\begin{RQ}{}
+\vspace{-10pt}
+
+FASTREAD as the method for bug-fixing commits augmentation is better than current automatic keyword tagging.
+\end{RQ}
+ 
+ 
+ \textbf{RQ2: { How are risky software commit prediction based on FASTREAD labeled data perform against state-of-the-art method (Keyword) labeled data?}}
+  
+%From the bug-fixing commits, we can track back to find bug-inducing commits that introducing defects to the software. Each of these commits will be analyzed, and recommended metrics are extracted to describe how risky each commit is. 
+
+The right green flow in Figure \ref{fig:system} demonstrated our approach to improve the correctness of finding the bug-fixing commits. When the right bug-inducing commits are linked and analyzed to extract relevant values of metrics, a more robust model to predict future risky software commits is built. FFTs is validated as our chosen data miner when FFTs dominated the three standard methods (SMOTE+RF, SMOTE+LR, and SMOTE+SVM) in our experiment described in section 4 (RQ2). By winning 7 (78\%) for G-value and 6 (67\%) for $P_{opt}$ out of 9 projects, FFTs model built on FASTREAD labeled data outperform FFTs model built on Keyword labeled data. 
+ 
+
+\begin{RQ}{}
+\vspace{-10pt}
+FASTREAD labeled data are more fit and higher quality for risky software commit prediction. Automatic Keywords labeling method for defective software commit is deprecated for future defect prediction work.  
+\end{RQ}
+  
+
+\textbf{RQ3: {How state-of-the-art risky software commit identification and prediction system, Commit.Guru, comparing to our recommended $F^3T$ system in predicting risky software commit?}}
+ 
+%Data quality also comes from the proportion of the labels within the dataset. Agrawal et al. \cite{agrawal2018better} has found that imbalance class problem is apparent within defect prediction research. Although our study is not defect prediction, it does inherit a lot of defect prediction problem's nature where most of the commits are not bug-inducing commits. Risky software commit prediction also exhibit an imbalance class problem. Outside of data quality, data miner should be chosen carefully to leverage the nature of the problem and the dataset itself. 
+
+Current state-of-the-art risky software commit identification and prediction system is Commit.Guru (Keyword + Logistic Regression) that illustrated in the left blue flow in Figure \ref{fig:system}. However, FASTREAD is proven to improve the dependent features quality, or the correctness of risky software commit identification, the target for prediction task (from RQ1 and RQ2) while FFT has proven to be a robust data miner for software analytics task. Our proposed system of $F^3T$ (FASTREAD+FFTs) dominated on G-values with statistically significants win on all 9 projects and improvement  of the absolute delta up to 48\%. For $P_{opt}$,  $F^3T$ won 7 out of 9 projects with the absolute delta up to 26\%. 
+
+  
+\begin{RQ}{}
+\vspace{-10pt}
+$F^3T$ outperformed state-of-the-art risky software commit identification and prediction system, Commit.Guru. $F^3T$ is recommended as a new baseline for future research work.
+\end{RQ}
+
+%  \textbf{RQ4: { How the FFT model comparing to state-of-the-art methods in predicting risky software commit?}}
+ 
+%  Modern state-of-the-art methods do include more than just Logistic Regression such as Random Forest (RF) and Support Vector Machine (SVM) for more complex problems in combination with Synthetic Minority Oversampling Technique (SMOTE) to handle class imbalance problem. It is essential to validate our data miner of choice FFT by comparing it against state-of-the-art data miners. With seven wins, one loss, and one tie, FFT model outperformed state of the art data miner in risky software commit prediction.  
+
+ 
+% \begin{RQ}{}
+% \vspace{-10pt}
+% FFT model outperformed state-of-the-art risky software commit prediction and is recommended as a new baseline for future work in risky software commit prediction.
+% \end{RQ}
 
 
 \subsection{Experimental Rig}
@@ -802,7 +1218,7 @@ FASTREAD as the method for bug-fixing commits augmentation is better than curren
 %\resizebox{!}{0.2\linewidth}{
 \setlength\tabcolsep{10pt}
 \begin{tabular}{ l|c|c|c|c|c|c }
- \multicolumn{1}{c|}{} & \multicolumn{2}{c|}{Precision} & \multicolumn{2}{c|}{Recall} & \multicolumn{2}{c}{False-Alarm}\\
+ \multicolumn{1}{c|}{} & \multicolumn{2}{c|}{Precision} & \multicolumn{2}{c|}{Recall} & \multicolumn{2}{c}{FAR}\\
 \cline{2-7}
  Dataset & K & F & K & F & K & F \\
 \hline
@@ -821,11 +1237,13 @@ LAMMPS & 57 & 78  & 81 & 99 & 73 & 35 \\
 \textbf{RQ2: { How are risky software commit prediction based on FASTREAD labeled data perform against state-of-the-art method (Keyword) labeled data?}}
  
  \begin{table}[!t]
-\small
+\footnotesize
 \begin{center}
 \caption{RQ2 FFT Validation Statistical Results - G-value (top) and $P_{opt}$ (bottom) percentage performance comparison of statistically significant wins across all the releases per project between FFTs versus state-of-the-art methods (SMOTE+SVM, SMOTE+RF, and SMOTE+LR)}
 \label{tb:rq4}
 \begin{tabular}{c@{~}|r@{~}|r@{~}|r@{~}|r@{~}}
+\multicolumn{1}{c|}{} & \multicolumn{4}{c}{\textbf{\% G-value Wins}} \\
+\cline{2-5}
 \begin{tabular}[c]{@{}c@{}} \textbf{Dataset} \end{tabular} & \begin{tabular}[c]{@{}c@{}} \textbf{SMOTE+RF}\end{tabular} & \textbf{SMOTE+SVM} & \begin{tabular}[c]{@{}c@{}} \textbf{SMOTE+LR}\end{tabular} & \textbf{FFT} \\ \hline
 PCMSOLVER & 0 & 0 & 100 & 0  \\ 
 AMBER & 0 & 0 & 33 & 33  \\ 
@@ -842,10 +1260,12 @@ LIBMESH & 0 & 0 & 0 & 100\\
 \end{table} 
 
 \begin{table}[!t]
-\small
+\footnotesize
 \begin{center}
 \begin{tabular}{c@{~}|r@{~}|r@{~}|r@{~}|r@{~}}
-\begin{tabular}[c]{@{}c@{}} \textbf{Dataset} \end{tabular} & \begin{tabular}[c]{@{}c@{}} \textbf{SMOTE+RF}\end{tabular} & \textbf{SMOTE+SVM} & \begin{tabular}[c]{@{}c@{}} \textbf{SMOTE+LR}\end{tabular} & \textbf{FFT} \\ \hline
+\multicolumn{1}{c|}{} & \multicolumn{4}{c}{\textbf{\% $P_{opt}$ Wins}} \\
+\cline{2-5}
+\begin{tabular}[c]{@{}c@{}} \textbf{Dataset} \end{tabular} & \begin{tabular}[c]{@{}c@{}}    \textbf{SMOTE+RF}\end{tabular} & \textbf{SMOTE+SVM} & \begin{tabular}[c]{@{}c@{}} \textbf{SMOTE+LR}\end{tabular} & \textbf{FFT} \\ \hline
 PCMSOLVER & 0 & 0 & 0 & 0  \\ 
 
 LAMMPS & 37 & 0 & 0 & 12  \\  
@@ -888,7 +1308,7 @@ From the bug-fixing commits, we can track back to find bug-inducing commits that
 \begin{figure*}[!t]
 \small
 \vspace{-10pt}
-\caption{RQ2 Numerical Result - Absolute median G-value (top chart) and $P_{opt}$ (bottom chart) performance of comparing the performance using FFTs to build risky software commit prediction on FASTREAD generated data ($F^3T$) versus Keyword generated data (Keyword+FFT) for each release per project.}
+\caption{RQ2 Numerical Result - Median G-value (top chart) and $P_{opt}$ (bottom chart) performance of comparing the performance using FFTs to build risky software commit prediction on FASTREAD generated data ($F^3T$) versus Keyword generated data (Keyword+FFT) for each release per project.}
 \includegraphics[width=\linewidth, height=1.8in]{rq2_1.png}
 \label{fig:rq2}
 \vspace{-20pt}
@@ -908,12 +1328,14 @@ From the bug-fixing commits, we can track back to find bug-inducing commits that
 \begin{table}
 \small
 \begin{center}
-\caption{RQ2 Statistical Result - G-value (left) and $P_{opt}$ (right) percentage performance comparison of statistically significant wins across all the releases per project between FASTRERAD+FFT(F+FFT) versus Keyword+FFT(K+FFT)}
+\caption{RQ2 Statistical Result - G-value (left) and $P_{opt}$ (right) percentage performance comparison of statistically significant wins across all the releases per project between FASTRERAD+FFT($F^3T$) versus Keyword+FFT(K+FFT)}
 \label{tb:rq2}
 \resizebox{\linewidth}{!}{
- \begin{minipage}{0.5\linewidth}
+ \begin{minipage}{0.55\linewidth}
 \begin{tabular}{c@{~}|r@{~}|r@{~}}
-\begin{tabular}[c]{@{}c@{}} \textbf{Dataset} \end{tabular} & \begin{tabular}[c]{@{}c@{}} \textbf{K+FFT}\end{tabular} & \textbf{F+FFT}\\ \hline
+\multicolumn{1}{c|}{} & \multicolumn{2}{c}{\textbf{\% G-value Wins}} \\
+\cline{2-3}
+\begin{tabular}[c]{@{}c@{}} \textbf{Dataset} \end{tabular} & \begin{tabular}[c]{@{}c@{}} \textbf{K+FFT}\end{tabular} & \textbf{$F^3T$}\\ \hline
 PCMSOLVER & 100 & 0  \\ 
 AMBER & 67 & 33  \\ 
 HOOMD & 40 & 60 \\ 
@@ -923,11 +1345,14 @@ RMG-PY  & 40 & 60 \\
 \textbf{MDANALYSIS} & \textbf{28} & \textbf{72} \\ 
 \textbf{LAMMPS} & \textbf{25} & \textbf{75} \\
 XENON & 16 & 83  \\  
-\end{tabular}
+\end{tabular}  %
 \end{minipage} \
-\begin{minipage}{0.5\linewidth}
+\begin{minipage}{0.55\linewidth}
 \begin{tabular}{c@{~}|r@{~}|r@{~}}
-\begin{tabular}[c]{@{}c@{}} \textbf{Dataset} \end{tabular} & \begin{tabular}[c]{@{}c@{}} \textbf{K+FFT}\end{tabular} & \textbf{F+FFT}\\ \hline
+\multicolumn{1}{c|}{} & \multicolumn{2}{c}{\textbf{\% $P_{opt}$ Wins}} \\
+\cline{2-3}
+\begin{tabular}[c]{@{}c@{}} 
+\textbf{Dataset} \end{tabular} & \begin{tabular}[c]{@{}c@{}} \textbf{K+FFT}\end{tabular} & \textbf{$F^3T$}\\ \hline
 AMBER & 67 & 33  \\
 HOOMD & 60 & 40 \\ 
 XENON & 50 & 50  \\  
@@ -963,10 +1388,14 @@ FASTREAD labeled data are more fit and higher quality for risky software commit 
 \caption{RQ3 Statistical Result - G-value (left) and $P_{opt}$ (right) percentage performance comparison of statistically significant wins across all the releases per project between $F^3T$ versus Commit.Guru}
 \label{tb:rq3}
 \resizebox{\linewidth}{!}{
- \begin{minipage}{0.5\linewidth}
+ \begin{minipage}{0.52\linewidth}
 \begin{tabular}{c@{~}|r@{~}|r@{~}}
-\begin{tabular}[c]{@{}c@{}} \end{tabular} & \begin{tabular}[c]{@{}c@{}} \textbf{Commit}\end{tabular} & \\
-\textbf{Dataset}  &  \textbf{Guru} & \textbf{FFFT}\\\hline
+\multicolumn{1}{c|}{} & \multicolumn{2}{c}{\textbf{\% G-value Wins}} \\
+\cline{2-3}
+\begin{tabular}[c]{@{}c@{}} \end{tabular} & 
+\begin{tabular}[c]{@{}c@{}}
+\textbf{Commit}\end{tabular} & \\
+\textbf{Dataset}  &  \textbf{Guru} & \textbf{$F^3T$}\\\hline
 XENON & 16 & 66  \\ 
 LAMMPS & 0 & 75 \\ 
 HOOMD & 20 & 80 \\ 
@@ -980,8 +1409,10 @@ MDANALYSIS & 0 & 100  \\
 \end{minipage}
 \begin{minipage}{0.5\linewidth}
 \begin{tabular}{c@{~}|r@{~}|r@{~}}
+\multicolumn{1}{c|}{} & \multicolumn{2}{c}{\textbf{\% $P_{opt}$ Wins}} \\
+\cline{2-3}
 \begin{tabular}[c]{@{}c@{}} \end{tabular} & \begin{tabular}[c]{@{}c@{}} \textbf{Commit}\end{tabular} & \\
-\textbf{Dataset}  &  \textbf{Guru} & \textbf{FFFT}\\\hline
+\textbf{Dataset}  &  \textbf{Guru} & \textbf{$F^3T$}\\\hline
 PCMSOLVER & 100 & 0  \\ 
 AMBER & 67 & 33  \\ 
 HOOMD & 40 & 60 \\ 
@@ -996,14 +1427,14 @@ XENON & 16 & 83  \\
 \end{minipage}}
 
 \end{center} 
-\vspace{-20pt}
+\vspace{-15pt}
 \end{table}
 
 \begin{figure*}[!t]
-\caption{RQ3 Numerical Results - Absolute median G-value (top chart) and $P_{opt}$ (bottom chart) performance of comparing the performance between $F^3T$ and Commit.Guru for each release per project.}
+\caption{RQ3 Numerical Results - Median G-value (top chart) and $P_{opt}$ (bottom chart) performance of comparing the performance between $F^3T$ and Commit.Guru for each release per project.}
 \includegraphics[width=\linewidth, height=1.8in]{rq3_1.png}
 \label{fig:rq3}
-\vspace{-25pt}
+\vspace{-20pt}
 \end{figure*}
 \begin{figure*}[!t]
 \includegraphics[width=\linewidth, height=1.8in]{rq3_2.png}
@@ -1014,7 +1445,7 @@ XENON & 16 & 83  \\
  
 Beside dependent ground truth labels, data quality also comes from the proportion of the labels within the dataset. Agrawal et al. \cite{agrawal2018better} has found that the imbalance class problem is apparent within defect prediction research. Although, our study is not defect prediction, it does inherit a lot of defect prediction problem's nature where most of the commits are not bug-inducing commits as shown in Table \ref{tbl:dataset} where the median of defective commit is 23\%. Therefore, risky software commit also exhibit imbalance class problem. Outside of data quality, data miner should be chosen carefully to leverage the nature of the problem and the dataset itself. FASTREAD improves the dependent features quality or the correctness of risky software commit identification, target for prediction task (from RQ1 and RQ2) while FFTs model has proven to be a strong data miner for software analytics task. Our recommended $F^3T$ method is chosen for this paper to compare against state-of-the-art risky software prediction method, Commit.Guru's Keyword+LR. 
 
-From the Figure \ref{fig:rq3}, the green triangles and red squares represent $F^3T$'s performance and Commit.Guru's performance for G-value (top chart) and $P_{opt}$ (bottom chart). $F^3T$ clearly outperformed Keyword+LR on all 9 projects for G-value where $F^3T$ won 100\% of the time in 5 projects for all the releases within that same project (recorded Table \ref{tb:rq3}). For $P_{opt}$ $F^3T$ won 7 out of 9 projects for $P_{opt}$ with statistically significant different in the right of Table \ref{tb:rq3}. With the majority won on both measures, we can conclude: 
+From the Figure \ref{fig:rq3}, the green triangles and red squares represent $F^3T$'s performance and Commit.Guru's performance for G-value (top chart) and $P_{opt}$ (bottom chart). $F^3T$ clearly outperformed Keyword+LR on all 9 projects for G-value where $F^3T$ won 100\% of the time in 5 projects for all the releases within that same project (recorded Table \ref{tb:rq3}). For $P_{opt}$, $F^3T$ won 7 out of 9 projects with statistically significant differences in the right of Table \ref{tb:rq3}. With the majority won on both measures, we can conclude: 
 
 
 \begin{RQ}{}
@@ -1083,24 +1514,37 @@ For this risky software commit prediction datasets, an ordering is deliberately 
 
 \section{Conclusion}
 
-The market for software tools and services are drastically growing. After creation, comes software maintenance. Software maintenance is an endless and continuing process in which software developers have the domain expertise for identifying the defect-prone code/subsystems/commits. Beside source code analysis, source code logs/comments/commits are essential to reason the defect rate of a system. However, current state-of-the-art quality and risk prediction of software commits augmenting the data by simply checking for the existing of defect-related keywords within the commit message which has been found to have low accuracy even with the help of topic modeling model. We introduced $F^3T$ system for JIT software quality assurance with (1) FASTREAD for bug-inducing commits identification and (2) FFT as the data miner for risky software commit prediction where:
+The market for software tools and services are drastically growing. After creation, comes software maintenance. Software maintenance is an endless and continuing process in which software developers have the domain expertise for identifying the defect-prone code/subsystems/commits. Beside source code analysis, source code logs/comments/commits are essential to reason the defect rate of a system. However, current state-of-the-art quality and risk prediction of software commits augmenting the data by simply checking for the existing of defect-related keywords within the commit message which has been found to have low accuracy even with the help of topic modeling model. We introduced $F^3T$ system for JIT software quality assurance:
+
+%with (1) FASTREAD for bug-inducing commits identification and (2) FFT as the data miner for risky software commit prediction where:
+
+\begin{enumerate}
+    \item On labeling level, with human-labeled as ground-truths, FASTREAD maximizes recall and minimizes false-alarm for bug-fixing commits identification more than automatic Keyword tagging method (i.e. RQ1). Moreover, FASTREAD provides higher quality data for better performance of risky software commit prediction model (i.e. FFT) than Keyword when evaluating with G-value and $P_{opt}$ (i.e. RQ2).  Commit messages/logs have complex nature but are important to software maintenance and should not be done automatically through keywords tagging. A human+AI partnership utilizing active learner such as FASTREAD is recommended for commits reviewing. 
+    \item  FFTs model should be considered as a baseline for future work in risky software commits prediction. 
+    \item Altogether, $F^3T$ (FASTREAD+FFT) system remarkably outperform state-of-the-art Commit.Guru for risky software commits prediction (i.e. RQ3). $F^3T$ can replace Commit.Guru as a better software analytics approach for practictioners in future researches.
+\end{enumerate}
+    
+
+%From our study empirical results, we recommend:
+%\begin{enumerate}
+%    \item Commit messages/logs have complex nature but are important to software maintenance and should not be done automatically through keywords tagging. A human-in-the-loop AI method utilizing active learner such as FASTREAD is recommended for defect-prone commits reviewing.   
+%    \item FFT should be considered as a baseline for future work in risky software commits prediction. 
+%\item Together, our $F^3T$ system can replace Commit.Guru as a better software analytics approach for practictioners in future researches.
+%\end{enumerate} 
+
+\vspace{2mm}
+
+\noindent These results motive future works with:
 
 \bi
-\item With human-labeled as ground-truths, FASTREAD maximizes recall and minimizes false-alarm for bug-fixing commits identification more than automatic Keyword tagging method.
-\item FASTREAD provides higher quality data for better performance of risky software commit prediction model (i.e. FFT) than Keyword when evaluating with G-value and $P_{opt}$.  
-\item $F^3T$ system remarkably outperform state-of-the-art Commit.Guru for risky software commits prediction. 
+    \item The data-mining process in this paper only focusing on the change level (JIT) as a whole with general commit's attributes (from Table \ref{tbl:metrics}) which are averaged out between multiple files within a commit \cite{kamei12_jit, commitguru, nayrolles18_clever, yan18_tddetermination}. A lot of defect prediction researches also focusing on release level and file attributes (i.e. learning on static code attributes such as C.K. and McGabe metrics) \cite{dpmetrics94, Fu2016TuningFS, danijel13lit, Jureczko10oodp, ghotra15, nagappan05, menzies07dp, menzies10dp, krishna16bellwether, nam15hetero, agrawal2019dodge, di18_fft, Tu18Tuning, agrawal2018better} that are more granulated and high-dimensional that would be worthwhile to look into with $F^3T$ system.
+    
+    \item Reducing the cost of run-time while improving quality for bug-fixing labeling is an open research problem.
+    
 \ei
 
-From our study empirical results, we recommend:
-\begin{enumerate}
-    \item Commit messages/logs have complex nature but are important to software maintenance and should not be done automatically through keywords tagging. A human-in-the-loop AI method utilizing active learner such as FASTREAD is recommended for defect-prone commits reviewing.   
-    \item FFT should be considered as a baseline for future work in risky software commits prediction. 
-\end{enumerate} 
-
-
-
 \balance
-\bibliographystyle{ACM-Reference-Format}
+\bibliographystyle{plain}
 
 % \bibliographystyle{plain}
 % \bibliography{reference}
