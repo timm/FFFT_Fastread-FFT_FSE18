@@ -1,15 +1,15 @@
 Reviewers' Comments
 
-1. Please note that some reviewers may have included additional comments in a separate file. If a review contains the note "see the attached file" under Section III A - Public Comments, you will need to log on to ScholarOne Manuscripts  to view the file. After logging in, select the Author Center, click on the "Manuscripts with Decisions" queue and then clicking on the "view decision letter" link for this manuscript. You must scroll down to the very bottom of the letter to see the file(s), if any.  This will open the file that the reviewer(s) or the Associate Editor included for you along with their review.
+  Please note that some reviewers may have included additional comments in a separate file. If a review contains the note "see the attached file" under Section III A - Public Comments, you will need to log on to ScholarOne Manuscripts  to view the file. After logging in, select the Author Center, click on the "Manuscripts with Decisions" queue and then clicking on the "view decision letter" link for this manuscript. You must scroll down to the very bottom of the letter to see the file(s), if any.  This will open the file that the reviewer(s) or the Associate Editor included for you along with their review.
 
 Reviewer: 1
 
 Public Comments (these will be made available to the author)
-2. 3This paper proposed to exploit two new techniques (i.e., FASTREAD and FAST FRUGAL TREES) to facilitate the task of commit labelling and just-in-time defect prediction respectively. The central insight of this paper is that the commit labeling problem is analogous to reading research papers. With an such intuition, the authors proposed to leverage an active learning approach, FASTREAD, to label “worrying” commits. The evaluation over 9 open source projects demonstrated the benefits of using the proposed “F3T” technique.
+  3This paper proposed to exploit two new techniques (i.e., FASTREAD and FAST FRUGAL TREES) to facilitate the task of commit labelling and just-in-time defect prediction respectively. The central insight of this paper is that the commit labeling problem is analogous to reading research papers. With an such intuition, the authors proposed to leverage an active learning approach, FASTREAD, to label “worrying” commits. The evaluation over 9 open source projects demonstrated the benefits of using the proposed “F3T” technique.
 
-3. Defect prediction has attracted huge research attention a decade ago. Although it gets less and less attention recently, many research efforts are still being made to advance this direction. Labelling commits, on the other hand, seems to be more important since it is the foundation of many mining-based software engineering researches. Therefore, the motivation of this work, as emphasized in Section 2.3, is clear to me. 
+ Defect prediction has attracted huge research attention a decade ago. Although it gets less and less attention recently, many research efforts are still being made to advance this direction. Labelling commits, on the other hand, seems to be more important since it is the foundation of many mining-based software engineering researches. Therefore, the motivation of this work, as emphasized in Section 2.3, is clear to me. 
 
-4. However, many enhancements could be made to improve this manuscript. Especially for its approach (i.e., not clearly explained) and evaluations (i.e., missing important state-of-the-art techniques). 
+ However, many enhancements could be made to improve this manuscript. Especially for its approach (i.e., not clearly explained) and evaluations (i.e., missing important state-of-the-art techniques). 
 
 1.      The approach, including its intuition and insights, is too brief and confusing. 
 
