@@ -11,7 +11,7 @@ Public Comments (these will be made available to the author)
 
  However, many enhancements could be made to improve this manuscript. Especially for its approach (i.e., not clearly explained) and evaluations (i.e., missing important state-of-the-art techniques). 
 
-1.  The approach, including its intuition and insights, is too brief and confusing. 
+- 1.  The approach, including its intuition and insights, is too brief and confusing. 
 
 The authors spent lots of efforts in describing motivations and different learning models. However, the description of the approach itself is too brief, which prevent me from understanding the novelty of this work clearly. For instance, the central insight of this paper is “Commit labelling problem is analogous to reading research papers”.  However, there is no justification or examples why this insight might be valid. This poses significant threats to the validity of the proposed approach. Besides, what is the intuition of use “FAST and FRUGAL TREES” in classifying buggy commits? Since it is a major component of the F3T approach, justifications are required.
 
@@ -25,13 +25,13 @@ Many notations in Table 3 have not been explained. It is not a good practice to 
 
 The current description of Section 3 confused me in many aspects. I suggest the authors to enhance the explanation why FASTREAD can be applied in labelling commit, and use a diagram to better explain the workflow of FASTREAD.
 
-2.      Some details are not well-explained.
+-  2.      Some details are not well-explained.
 
--       In RQ2, RQ3 and RQ4, the authors should discuss more details about whether the evaluation results on the manually labelled four projects are different from those on the other five automated labelled projects. 
+- In RQ2, RQ3 and RQ4, the authors should discuss more details about whether the evaluation results on the manually labelled four projects are different from those on the other five automated labelled projects. 
 
--       The authors claimed that using FASTREAD, humans only need to read a small percentage of the commits (Page 4). However, the authors did not present the exact data that how many commits have been manually reviewed for each project. I think such information should be listed in the experimental setup. 
+- The authors claimed that using FASTREAD, humans only need to read a small percentage of the commits (Page 4). However, the authors did not present the exact data that how many commits have been manually reviewed for each project. I think such information should be listed in the experimental setup. 
 
-3.      Evaluation does not include the state-of-the-art.
+3. Evaluation does not include the state-of-the-art.
 
 -       The authors first proposed to leverage FASTREAD to identify which commit is bug-fixing. In the evaluations, the authors compared with a keyword-based approach. However, there are many approaches have been proposed to identify bug-fixing commits automatically, such as Relink [4] and [5]. Especially, in the work proposed by Tian et al. [5], they also compared with the keyword-based approach, which has already demonstrated an average improvement from 22.05% to 50.07%. Therefore, such important related works should be selected as baselines for comparison. 
 
@@ -39,7 +39,7 @@ The current description of Section 3 confused me in many aspects. I suggest the 
 
 -       Recent studies have pointed out that the SZZ algorithm is not accurate. For instance, Böhme et al. [1] found that, for nearly one third of their studied bugs, SZZ cannot identify any real bug-inducing commits via “blaming” the statements modified by the bug-fixing commits. Costa et al. [2] later proposed a framework to evaluate the results of SZZ. They found that for 46.0% of their studied bugs, the bug-inducing commits identified by SZZ are years apart from one another while it is unlikely that code changes committed years apart will induce the same bug. Have the authors checked such bias in their evaluation? 
 
-4.      Some other typos.
+4.  Some other typos.
 There are many typos in this manuscript. Please carefully fix these writing issues. Some examples are listed as follows:
 -       Page 5 line 37: “since many of these projects a simple one-person prototypes”
 -       Page 6 line 36: “oroject data was divided into”
@@ -67,6 +67,8 @@ I have several major comments of the paper while my other ones are quite minor.
 1. The contribution of the paper. The paper in all contributes in proposing using active learning in labeling commits.
 I do see the contribution part at the end of intro. However, honestly, number 1, i.e., “we bring this idea to you”, is not a contribution, but rather the paper itself. Number 3 is a bit weak since some of the subjects in this paper is also in Java and trying software defect prediction on a domain of software is although indeed a contribution, but not significant. Otherwise one can just pick a new domain, try it out and claim contribution. 
 I hope the authors can support their contribution more in the rebuttal and convince me the significance of it (not just emphasizing the ones in page 3). 
+
+> need a better list of controbutuobns
 
 2. The need of the approach. This is another major concern of mine. This technique, although useful in cases, may not be needed at all in many cases. Using issue tracking system to link issue reports to the commits and use the data in the issue reports to label the commit is a very common practice in software prediction. I understand there are always projects that are without an issue tracker. This makes me remember once upon a time, people study how to combine changes in CVS into change sets. If you ask me are those techniques useful, of course. There are still projects on the planet using CVS. But the relevance is decreasing. 
 In fact, I checked some of the subjects that the authors study, some of them have issue ids right in their commit messages and some do have an issue tracker, that you can mine to link back to the commits. 
