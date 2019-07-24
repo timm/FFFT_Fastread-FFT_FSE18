@@ -11,7 +11,7 @@ Public Comments (these will be made available to the author)
 
  However, many enhancements could be made to improve this manuscript. Especially for its approach (i.e., not clearly explained) and evaluations (i.e., missing important state-of-the-art techniques). 
 
-1.      The approach, including its intuition and insights, is too brief and confusing. 
+1.  The approach, including its intuition and insights, is too brief and confusing. 
 
 The authors spent lots of efforts in describing motivations and different learning models. However, the description of the approach itself is too brief, which prevent me from understanding the novelty of this work clearly. For instance, the central insight of this paper is “Commit labelling problem is analogous to reading research papers”.  However, there is no justification or examples why this insight might be valid. This poses significant threats to the validity of the proposed approach. Besides, what is the intuition of use “FAST and FRUGAL TREES” in classifying buggy commits? Since it is a major component of the F3T approach, justifications are required.
 
