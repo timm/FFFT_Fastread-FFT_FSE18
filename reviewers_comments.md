@@ -19,38 +19,44 @@ The authors spent lots of efforts in describing motivations and different learni
 
 If we only look at the commit log messages, they are only text tokens. In such case, the approach FASTREAD can process the data of log messages if it can process research papers. However, the characteristics of log messages and research papers diverge a lot. Will that affect the effectiveness of FASTREAD in labelling commits?
 
-- The concern is valid, but our goal is to investigating if using FASTREAD can solve the labelling problem when comparing to existing methods and practically, it is still effective when being used to label commit logs that does improve the "accuracy" of the labels as ground truths (1) inspected by human and (2) defect prediction task.
+> The concern is valid, but our goal is to investigating if using FASTREAD can solve the labelling problem when comparing to existing methods and practically, it is still effective when being used to label commit logs that does improve the "accuracy" of the labels as ground truths (1) inspected by human and (2) defect prediction task.
 
 Besides, details of FASTREAD are also not clearly explained. In the description of Section 3, it seems that FASTREAD integrates some sampling techniques and machine learner (e.g., SVM) together. However, what are the features used here for the learner SVM? If FASTREAD requires generating a set of features to label commit, then what are the features generated for research papers in the original setting of FASTREAD? 
 
-- The features are the same as in the original setting of FASTREAD with 4000 the term frequency vectors with highest tf-idf
+> The features are the same as in the original setting of FASTREAD with 4000 the term frequency vectors with highest tf-idf
 score.
 
 In page 4 at line 41, “until N2=30 relevant examples are found”. Here, are these 30 examples declared by human or automatically?
 
-- declared by human. 
+> declared by human. 
 
 Many notations in Table 3 have not been explained. It is not a good practice to present a table without explaining the items listed in it.  The current description of Section 3 confused me in many aspects. I suggest the authors to enhance the explanation why FASTREAD can be applied in labelling commit, and use a diagram to better explain the workflow of FASTREAD.
 
-@Todo: remove or use the table in the rewrite somehow
+> @Todo: remove or use the table in the rewrite somehow
 
 2.      Some details are not well-explained.
 
 In RQ2, RQ3 and RQ4, the authors should discuss more details about whether the evaluation results on the manually labelled four projects are different from those on the other five automated labelled projects. The authors claimed that using FASTREAD, humans only need to read a small percentage of the commits (Page 4). However, the authors did not present the exact data that how many commits have been manually reviewed for each project. I think such information should be listed in the experimental setup. 
 
-- @ToDo: add in a column where how many commits need to be read and the percentage of the data to get up to 95%. 
+> @ToDo: add in a column where how many commits need to be read and the percentage of the data to get up to 95%. 
 
 3. Evaluation does not include the state-of-the-art.
 
 The authors first proposed to leverage FASTREAD to identify which commit is bug-fixing. In the evaluations, the authors compared with a keyword-based approach. However, there are many approaches have been proposed to identify bug-fixing commits automatically, such as Relink [4] and [5]. Especially, in the work proposed by Tian et al. [5], they also compared with the keyword-based approach, which has already demonstrated an average improvement from 22.05% to 50.07%. Therefore, such important related works should be selected as baselines for comparison. 
 
-- 
+> Relink: this approach begins with the **labeled** bugs then it does the linking analysis to match the changes to the bugs. which is different to this paper which validates the veracity of the label in the first place. Their methods are not valid and applicable unless the labeling is correct in the first place (which needs our method, Emblem) 
+> Identifying Linux Bug Fixing Patches: the approach works also requiring the existing **labeled** bugs to link to the changes. Given a new data, without ground truths, the approach would not work (which needs our method, Emblem)   
 
 The authors should also compare with the-state-of-the-art approaches for predicting bug-inducing commits. For example, Yang et al., proposed to leverage deep learning techniques to predict which commit is buggy [3].
 
-- The essential of the paper was af
+> While state-of-the-art approaches for predicting bug-inducing commits are Yang's DL method, the goal of including defect prediction on commits level is not to showcase which predicting method is the best but to showcase the labeler's effectiveness in generating quality ground truths for other tasks of the data mining pipeline for SE quality assurances.  
+
+... however, the reviewers might argue that the result may change when using state-of-the-art Yang's DL method.
+
 
 Recent studies have pointed out that the SZZ algorithm is not accurate. For instance, Böhme et al. [1] found that, for nearly one third of their studied bugs, SZZ cannot identify any real bug-inducing commits via “blaming” the statements modified by the bug-fixing commits. Costa et al. [2] later proposed a framework to evaluate the results of SZZ. They found that for 46.0% of their studied bugs, the bug-inducing commits identified by SZZ are years apart from one another while it is unlikely that code changes committed years apart will induce the same bug. Have the authors checked such bias in their evaluation? 
+
+
 
 4.  Some other typos.
 There are many typos in this manuscript. Please carefully fix these writing issues. Some examples are listed as follows:
