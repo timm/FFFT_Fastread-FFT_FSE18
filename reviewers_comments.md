@@ -5,7 +5,7 @@ Reviewers' Comments
 Reviewer: 1
 
 Public Comments (these will be made available to the author)
-  3This paper proposed to exploit two new techniques (i.e., FASTREAD and FAST FRUGAL TREES) to facilitate the task of commit labelling and just-in-time defect prediction respectively. The central insight of this paper is that the commit labeling problem is analogous to reading research papers. With an such intuition, the authors proposed to leverage an active learning approach, FASTREAD, to label “worrying” commits. The evaluation over 9 open source projects demonstrated the benefits of using the proposed “F3T” technique.
+  This paper proposed to exploit two new techniques (i.e., FASTREAD and FAST FRUGAL TREES) to facilitate the task of commit labelling and just-in-time defect prediction respectively. The central insight of this paper is that the commit labeling problem is analogous to reading research papers. With an such intuition, the authors proposed to leverage an active learning approach, FASTREAD, to label “worrying” commits. The evaluation over 9 open source projects demonstrated the benefits of using the proposed “F3T” technique.
 
  Defect prediction has attracted huge research attention a decade ago. Although it gets less and less attention recently, many research efforts are still being made to advance this direction. Labelling commits, on the other hand, seems to be more important since it is the foundation of many mining-based software engineering researches. Therefore, the motivation of this work, as emphasized in Section 2.3, is clear to me. 
 
@@ -45,7 +45,7 @@ In RQ2, RQ3 and RQ4, the authors should discuss more details about whether the e
 The authors first proposed to leverage FASTREAD to identify which commit is bug-fixing. In the evaluations, the authors compared with a keyword-based approach. However, there are many approaches have been proposed to identify bug-fixing commits automatically, such as Relink [4] and [5]. Especially, in the work proposed by Tian et al. [5], they also compared with the keyword-based approach, which has already demonstrated an average improvement from 22.05% to 50.07%. Therefore, such important related works should be selected as baselines for comparison. 
 
 > Relink: this approach begins with the **labeled** bugs then it does the linking analysis to match the changes to the bugs. which is different to this paper which validates the veracity of the label in the first place. Their methods are not valid and applicable unless the labeling is correct in the first place (which needs our method, Emblem) 
-> Identifying Linux Bug Fixing Patches: the approach works also requiring the existing **labeled** bugs to link to the changes. Given a new data, without ground truths, the approach would not work (which needs our method, Emblem)   
+> Identifying Linux Bug Fixing Patches: the approach works also requiring the existing **labeled** bugs to link to the changes. Given a new data, without ground truths, the approach would not work (which needs our method, Emblem). The approach is only rechecked by human in a small sample.     
 
 The authors should also compare with the-state-of-the-art approaches for predicting bug-inducing commits. For example, Yang et al., proposed to leverage deep learning techniques to predict which commit is buggy [3].
 
@@ -56,7 +56,11 @@ The authors should also compare with the-state-of-the-art approaches for predict
 
 Recent studies have pointed out that the SZZ algorithm is not accurate. For instance, Böhme et al. [1] found that, for nearly one third of their studied bugs, SZZ cannot identify any real bug-inducing commits via “blaming” the statements modified by the bug-fixing commits. Costa et al. [2] later proposed a framework to evaluate the results of SZZ. They found that for 46.0% of their studied bugs, the bug-inducing commits identified by SZZ are years apart from one another while it is unlikely that code changes committed years apart will induce the same bug. Have the authors checked such bias in their evaluation? 
 
-
+- Labeling data is costly and time-consuming. 
+- Feature Engineering: generating quality and stable features \cite{amrit papers}. 
+- Model Training and Evaluation: (1) Rigorous and agile techniques to evaluate and evolve the model while balancing between human in the loop and efficiency through automacy. (2) Understanding when and how models fail to make accurate
+predictions (interpretable AI).
+- Model Deployment: the deployment needs to go smoothly in fast-paced model iterations.  
 
 4.  Some other typos.
 There are many typos in this manuscript. Please carefully fix these writing issues. Some examples are listed as follows:
@@ -66,9 +70,13 @@ There are many typos in this manuscript. Please carefully fix these writing issu
 
 
 [1]. Marcel Böhme and Abhik Roychoudhury. 2014. Corebench: Studying complex- ity of regression errors. In Proceedings of the 2014 International Symposium on Software Testing and Analysis. ACM, 105–115.
+
 [2]. DanielAlencardaCosta,ShaneMcIntosh,WeiyiShang,UiráKulesza,Roberta Coelho, and Ahmed E Hassan. 2017. A framework for evaluating the results of the szz approach for identifying bug-introducing changes. IEEE Transactions on Software Engineering 43, 7 (2017), 641–657.
+
 [3]. Yang, Xinli, et al. "Deep learning for just-in-time defect prediction." 2015 IEEE International Conference on Software Quality, Reliability and Security. IEEE, 2015.
+
 [4]. Wu, Rongxin, et al. "Relink: recovering links between bugs and changes." Proceedings of the 19th ACM SIGSOFT symposium and the 13th European conference on Foundations of software engineering. ACM, 2011. 
+
 [5]. Tian, Yuan, Julia Lawall, and David Lo. "Identifying linux bug fixing patches." Proceedings of the 34th International Conference on Software Engineering. IEEE Press, 2012.
 
 
@@ -87,16 +95,15 @@ I have several major comments of the paper while my other ones are quite minor.
 I do see the contribution part at the end of intro. However, honestly, number 1, i.e., “we bring this idea to you”, is not a contribution, but rather the paper itself. Number 3 is a bit weak since some of the subjects in this paper is also in Java and trying software defect prediction on a domain of software is although indeed a contribution, but not significant. Otherwise one can just pick a new domain, try it out and claim contribution. 
 I hope the authors can support their contribution more in the rebuttal and convince me the significance of it (not just emphasizing the ones in page 3). 
 
-> need a better list of controbutuobns
+> need a better list of contributions
 
 2. The need of the approach. This is another major concern of mine. This technique, although useful in cases, may not be needed at all in many cases. Using issue tracking system to link issue reports to the commits and use the data in the issue reports to label the commit is a very common practice in software prediction. I understand there are always projects that are without an issue tracker. This makes me remember once upon a time, people study how to combine changes in CVS into change sets. If you ask me are those techniques useful, of course. There are still projects on the planet using CVS. But the relevance is decreasing. 
-In fact, I checked some of the subjects that the authors study, some of them have issue ids right in their commit messages and some do have an issue tracker, that you can mine to link back to the commits. 
 
-> ???
+In fact, I checked some of the subjects that the authors study, some of them have issue ids right in their commit messages and some do have an issue tracker, that you can mine to link back to the commits. 
 
 Hence I would like to ask the authors how useful is their approach considering the fact that one may link issue tracker to the version control and label commits based on that. My suggested way may be study how often a project (say in github) do not use internal issue tracker or an external one. Or even the ones that use, how often the commits cannot be linked to an issue to be labelled, in order to better motivate the work.
 
-> clarifications...
+> I think I need to go through all the data to provide the chart for how the proportions of bug fixes that do not include the issues ids within the commit messages. 3 out of 9 projects clearly not use the Github 
 
 3. Unclearness of the bug prediction models. By reading through RQ2 to RQ4, I am a bit confused about whether each RQ is doing commit level or file level bug prediction. 
 I assume RQ2 is commit level bug prediction. But the highlight box of RQ2 in top left of page 9, says, buggy code. Also, the first line of page 9, “such code” should be “such commit”, I assume.
@@ -106,7 +113,8 @@ I would suggest the authors clarify this up and clearly lay this out in the pape
 If there are file-level prediction, are the authors doing post release bug? If so, how is the post release determined? If the authors doing the commit-level prediction, did the authors pre-check the data generated by szz to avoid clear mistakes from szz and how do you control it? For example, sometimes, the szz would say a large number of commits are bug inducing to one bug. How is training and testing data split?
 
 In short, please add more details into the paper to avoid confusion. 
-> change the name of the paper, remove FFTs and only focusing on the labeling as
+
+> change the name of the paper, remove FFTs and only focusing on the labeling .
 
 
 My other comments
@@ -138,6 +146,8 @@ The authors' work is well motivated. Keyword approaches are widely used for the 
 
 While the combination of previously established techniques is a strength of this paper on one hand, it also raises concerns about the size of the contribution of this work. Indeed, the most intriguing contribution of this work is the manual labelling of commit messages from a domain which is often overlooked in Software Engineering research, but I wonder if this is sufficient for a TSE publication. For a journal paper, I would expect a more detailed investigation of *why* FASTREAD and FFT work better than the baseline techniques in this scenario. What do they learn that other learners did not pick up on, for example?
 
+> 
+
 I found some of the vocabulary used in the paper confusing:
 
 * The title of the paper refers to labelling of issue reports, yet the paper appears to be about commit message labelling. Should the title be adjusted?
@@ -146,9 +156,12 @@ I found some of the vocabulary used in the paper confusing:
 
 Related to the previous point, the authors claim that Table 1 (the worrying keywords) are taken from reference 33. This does not appear to be correct -- although the Commit Guru paper claims the same. Would the authors be able to point out exactly where in reference 33 these keywords are to be found? A quick search didn't come up with anything, but I may have missed it. I suspect that the keywords were introduced in the Commit Guru paper instead of the Hindle 2008 work.
 
-
+> I took the keywords from Commit.Guru paper which said to leverage the work of Hindle 2008 work. (I should have cited Commit.Guru over Hindle 2008)
 
 While the focus on computational science software is a nice feature of this paper, it does beg the question whether the same improvements would be achieved on the projects that have been studied in related work. I would suggest that the authors report the results of their approach on at least one of the projects that were used by related work. This would also provide some data on the extent to which the domain affects the performance of different approaches.
+
+> The old datasets are only file-level and only collected by releases. The current public dataset of existing [JIT data] (http://
+research.cs.queensu.ca/~kamei/jittse/jit.zip) doesn't have the associated commit IDs, does have the timestamps so I can my methods on two standard libraries (Columba and Bugzilla 5k commits each). 
 
 For the manual labelling, the authors report "very low" observed disagreement and that it was under 15%. Please provide the exact numbers, ideally along with a representative example of a disagreement. 
 
