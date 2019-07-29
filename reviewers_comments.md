@@ -45,22 +45,23 @@ In RQ2, RQ3 and RQ4, the authors should discuss more details about whether the e
 The authors first proposed to leverage FASTREAD to identify which commit is bug-fixing. In the evaluations, the authors compared with a keyword-based approach. However, there are many approaches have been proposed to identify bug-fixing commits automatically, such as Relink [4] and [5]. Especially, in the work proposed by Tian et al. [5], they also compared with the keyword-based approach, which has already demonstrated an average improvement from 22.05% to 50.07%. Therefore, such important related works should be selected as baselines for comparison. 
 
 > Relink: this approach begins with the **labeled** bugs then it does the linking analysis to match the changes to the bugs. which is different to this paper which validates the veracity of the label in the first place. Their methods are not valid and applicable unless the labeling is correct in the first place (which needs our method, Emblem) 
+
 > Identifying Linux Bug Fixing Patches: the approach works also requiring the existing **labeled** bugs to link to the changes. Given a new data, without ground truths, the approach would not work (which needs our method, Emblem). The approach is only rechecked by human in a small sample.     
 
 The authors should also compare with the-state-of-the-art approaches for predicting bug-inducing commits. For example, Yang et al., proposed to leverage deep learning techniques to predict which commit is buggy [3].
 
 > While state-of-the-art approaches for predicting bug-inducing commits are Yang's DL method, the goal of including defect prediction on commits level is not to showcase which predicting method is the best but to showcase the labeler's effectiveness in generating quality ground truths for other tasks of the data mining pipeline for SE quality assurances.  
 
-... however, the reviewers might argue that the result may change when using state-of-the-art Yang's DL method.
+>... however, the reviewers might argue that the result may change when using state-of-the-art Yang's DL method.
 
 
 Recent studies have pointed out that the SZZ algorithm is not accurate. For instance, Böhme et al. [1] found that, for nearly one third of their studied bugs, SZZ cannot identify any real bug-inducing commits via “blaming” the statements modified by the bug-fixing commits. Costa et al. [2] later proposed a framework to evaluate the results of SZZ. They found that for 46.0% of their studied bugs, the bug-inducing commits identified by SZZ are years apart from one another while it is unlikely that code changes committed years apart will induce the same bug. Have the authors checked such bias in their evaluation? 
 
-- Labeling data is costly and time-consuming. 
-- Feature Engineering: generating quality and stable features \cite{amrit papers}. 
-- Model Training and Evaluation: (1) Rigorous and agile techniques to evaluate and evolve the model while balancing between human in the loop and efficiency through automacy. (2) Understanding when and how models fail to make accurate
+> Labeling data is costly and time-consuming. 
+> Feature Engineering: generating quality and stable features \cite{amrit papers}. 
+> Model Training and Evaluation: (1) Rigorous and agile techniques to evaluate and evolve the model while balancing between human in the loop and efficiency through automacy. (2) Understanding when and how models fail to make accurate
 predictions (interpretable AI).
-- Model Deployment: the deployment needs to go smoothly in fast-paced model iterations.  
+> Model Deployment: the deployment needs to go smoothly in fast-paced model iterations.  
 
 4.  Some other typos.
 There are many typos in this manuscript. Please carefully fix these writing issues. Some examples are listed as follows:
