@@ -15,7 +15,7 @@ Public Comments (these will be made available to the author)
 
 The authors spent lots of efforts in describing motivations and different learning models. However, the description of the approach itself is too brief, which prevent me from understanding the novelty of this work clearly. For instance, the central insight of this paper is “Commit labelling problem is analogous to reading research papers”.  However, there is no justification or examples why this insight might be valid. This poses significant threats to the validity of the proposed approach. Besides, what is the intuition of use “FAST and FRUGAL TREES” in classifying buggy commits? Since it is a major component of the F3T approach, justifications are required.
 
-- The focus is how to do labelling efficiently instead of labelling and FFT. The intuition of applying FFTs is to have the state-of-the-art defect-prediction approach (via @FSE18) that can showcase the improvement of labelling for defect prediction.   
+> The focus is how to do labelling efficiently instead of labelling and FFT. The intuition of applying FFTs is to have the state-of-the-art defect-prediction approach (via @FSE18) that can showcase the improvement of labelling for defect prediction.   
 
 If we only look at the commit log messages, they are only text tokens. In such case, the approach FASTREAD can process the data of log messages if it can process research papers. However, the characteristics of log messages and research papers diverge a lot. Will that affect the effectiveness of FASTREAD in labelling commits?
 
@@ -115,7 +115,7 @@ If there are file-level prediction, are the authors doing post release bug? If s
 
 In short, please add more details into the paper to avoid confusion. 
 
-> change the name of the paper, remove FFTs and only focusing on the labeling .
+> Most of these are rewriting, ... (change the name of the paper, remove FFTs and only focusing on the labeling, etc).
 
 
 My other comments
@@ -147,7 +147,6 @@ The authors' work is well motivated. Keyword approaches are widely used for the 
 
 While the combination of previously established techniques is a strength of this paper on one hand, it also raises concerns about the size of the contribution of this work. Indeed, the most intriguing contribution of this work is the manual labelling of commit messages from a domain which is often overlooked in Software Engineering research, but I wonder if this is sufficient for a TSE publication. For a journal paper, I would expect a more detailed investigation of *why* FASTREAD and FFT work better than the baseline techniques in this scenario. What do they learn that other learners did not pick up on, for example?
 
-> 
 
 I found some of the vocabulary used in the paper confusing:
 
