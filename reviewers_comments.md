@@ -58,12 +58,12 @@ The authors should also compare with the-state-of-the-art approaches for predict
 Recent studies have pointed out that the SZZ algorithm is not accurate. For instance, Böhme et al. [1] found that, for nearly one third of their studied bugs, SZZ cannot identify any real bug-inducing commits via “blaming” the statements modified by the bug-fixing commits. Costa et al. [2] later proposed a framework to evaluate the results of SZZ. They found that for 46.0% of their studied bugs, the bug-inducing commits identified by SZZ are years apart from one another while it is unlikely that code changes committed years apart will induce the same bug. Have the authors checked such bias in their evaluation? 
 
 ![](se_ml_process.png)
-> Software Engineering for Machine Learning: A Case Study
-> Labeling data is costly and time-consuming, hence our paper
+> Software Engineering for Machine Learning: A Case Study. Each of this process deserve case studies and papers that contributing to it's development and justification. 
 > Feature Engineering: generating quality and stable features \cite{amrit papers}. 
-> Model Training and Evaluation: (1) Rigorous and agile techniques to evaluate and evolve the model while balancing between human in the loop and efficiency through automacy \cite{}. (2) Understanding when and how models fail to make accurate
-predictions (interpretable AI).
+> Model Training and Evaluation: (1) Rigorous and agile techniques to evaluate and evolve the model while balancing between human in the loop and efficiency through automacy \cite{}. (2) Understanding when and how models fail to make accurate predictions (interpretable AI).
 > Model Deployment: the deployment needs to go smoothly in fast-paced model iterations.  
+> Labeling data is costly and time-consuming, hence our paper.
+
 
 4.  Some other typos.
 There are many typos in this manuscript. Please carefully fix these writing issues. Some examples are listed as follows:
