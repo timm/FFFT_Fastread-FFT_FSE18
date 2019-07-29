@@ -34,7 +34,7 @@ Many notations in Table 3 have not been explained. It is not a good practice to 
 
 > @Todo: remove or use the table in the rewrite somehow
 
-2.      Some details are not well-explained.
+2. Some details are not well-explained.
 
 In RQ2, RQ3 and RQ4, the authors should discuss more details about whether the evaluation results on the manually labelled four projects are different from those on the other five automated labelled projects. The authors claimed that using FASTREAD, humans only need to read a small percentage of the commits (Page 4). However, the authors did not present the exact data that how many commits have been manually reviewed for each project. I think such information should be listed in the experimental setup. 
 
@@ -163,7 +163,7 @@ Related to the previous point, the authors claim that Table 1 (the worrying keyw
 While the focus on computational science software is a nice feature of this paper, it does beg the question whether the same improvements would be achieved on the projects that have been studied in related work. I would suggest that the authors report the results of their approach on at least one of the projects that were used by related work. This would also provide some data on the extent to which the domain affects the performance of different approaches.
 
 > The old datasets are only file-level and only collected by releases. The current public dataset of existing [JIT data] (http://
-research.cs.queensu.ca/~kamei/jittse/jit.zip) doesn't have the associated commit IDs, does have the timestamps so I can my methods on two standard libraries (Columba and Bugzilla 5k commits each). 
+research.cs.queensu.ca/~kamei/jittse/jit.zip) doesn't have the associated commit IDs, does have the timestamps thou. (this would be tedious work if needed to be by contacting the people that did the data to redo the data collections on different CVS that are not Github). Things that can be quicker, I can redo my methods on two standard libraries (Bugzilla and Mozilla, just doing it on the most recent few k commits). 
 
 For the manual labelling, the authors report "very low" observed disagreement and that it was under 15%. Please provide the exact numbers, ideally along with a representative example of a disagreement. 
 
