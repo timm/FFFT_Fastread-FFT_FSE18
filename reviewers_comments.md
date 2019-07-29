@@ -57,9 +57,11 @@ The authors should also compare with the-state-of-the-art approaches for predict
 
 Recent studies have pointed out that the SZZ algorithm is not accurate. For instance, Böhme et al. [1] found that, for nearly one third of their studied bugs, SZZ cannot identify any real bug-inducing commits via “blaming” the statements modified by the bug-fixing commits. Costa et al. [2] later proposed a framework to evaluate the results of SZZ. They found that for 46.0% of their studied bugs, the bug-inducing commits identified by SZZ are years apart from one another while it is unlikely that code changes committed years apart will induce the same bug. Have the authors checked such bias in their evaluation? 
 
-> Labeling data is costly and time-consuming. 
+![](se_ml_process.png)
+> Software Engineering for Machine Learning: A Case Study
+> Labeling data is costly and time-consuming, hence our paper
 > Feature Engineering: generating quality and stable features \cite{amrit papers}. 
-> Model Training and Evaluation: (1) Rigorous and agile techniques to evaluate and evolve the model while balancing between human in the loop and efficiency through automacy. (2) Understanding when and how models fail to make accurate
+> Model Training and Evaluation: (1) Rigorous and agile techniques to evaluate and evolve the model while balancing between human in the loop and efficiency through automacy \cite{}. (2) Understanding when and how models fail to make accurate
 predictions (interpretable AI).
 > Model Deployment: the deployment needs to go smoothly in fast-paced model iterations.  
 
@@ -104,7 +106,7 @@ In fact, I checked some of the subjects that the authors study, some of them hav
 
 Hence I would like to ask the authors how useful is their approach considering the fact that one may link issue tracker to the version control and label commits based on that. My suggested way may be study how often a project (say in github) do not use internal issue tracker or an external one. Or even the ones that use, how often the commits cannot be linked to an issue to be labelled, in order to better motivate the work.
 
-> I think I need to go through all the data to provide the chart for how the proportions of bug fixes that do not include the issues ids within the commit messages. 3 out of 9 projects clearly not use the Github 
+> @Todo: go through all the data to provide the chart for how the proportions of bug fixes that do not include the issues ids within the commit messages. 3 out of 9 projects clearly not use the Github 
 
 3. Unclearness of the bug prediction models. By reading through RQ2 to RQ4, I am a bit confused about whether each RQ is doing commit level or file level bug prediction. 
 I assume RQ2 is commit level bug prediction. But the highlight box of RQ2 in top left of page 9, says, buggy code. Also, the first line of page 9, “such code” should be “such commit”, I assume.
